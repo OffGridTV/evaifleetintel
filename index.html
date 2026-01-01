@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>EVAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg: #f4f3ef;          /* light stone for black logo */
+      --text-dark: #0f1f33;   /* primary text */
+      --text-mid: #1f3552;    /* framework + footer */
+      --button: #16263d;
+      --button-hover: #1f3b66;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .logo {
+      width: min(420px, 80vw);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .framework {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      letter-spacing: 2.5px;
+      color: var(--text-mid);
+      margin-bottom: 42px;
+      text-transform: uppercase;
+      max-width: 90%;
+    }
+
+    .contact-btn {
+      background: var(--button);
+      color: #ffffff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .contact-btn:hover {
+      background: var(--button-hover);
+    }
+
+    footer {
+      padding: 18px 12px 22px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 0.85;
+    }
+
+    footer a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <img src="evai.svg" alt="EVAI Logo" class="logo" />
+
+    <h1>Enterprise Vehicle Architecture Intelligence</h1>
+
+    <div class="framework">
+      Translation Layers · Phased Reveal · Active Alignment
+    </div>
+
+    <a href="mailto:oem@evaifleetintel.com">
+      <button class="contact-btn">Contact EVAI</button>
+    </a>
+  </main>
+
+  <footer>
+    © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
+    <a href="https://fleetai.network" target="_blank">FleetAI Network</a> ·
+    <a href="https://evai.us" target="_blank">EVAI.us</a>
+  </footer>
+</body>
+</html>
