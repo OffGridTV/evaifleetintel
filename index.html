@@ -25,12 +25,11 @@
     body {
       min-height: 100vh;
       background: var(--bg);
-      font-family: "Synonym", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Synonym-Regular", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
       text-align: center;
     }
 
@@ -46,26 +45,26 @@
     }
 
     .logo {
-      width: min(390px, 78vw);
+      width: min(380px, 80vw);
       margin-bottom: 20px;
     }
 
     h1 {
-      font-family: "Alpino", serif;
-      font-size: 2.15rem;
+      font-family: "Alpino-Medium", serif;
+      font-size: clamp(1.9rem, 3vw, 2.4rem);
       font-weight: 500;
       margin-bottom: 12px;
     }
 
     .framework {
-      font-size: 1.05rem;
-      letter-spacing: 2.2px;
+      font-size: 1rem;
+      letter-spacing: 2.5px;
       color: var(--text-mid);
       margin-bottom: 28px;
       text-transform: uppercase;
     }
 
-    .primary-btn {
+    .pin-btn {
       background: var(--button);
       color: #ffffff;
       border: none;
@@ -76,16 +75,51 @@
       transition: background 0.2s ease;
     }
 
-    .primary-btn:hover {
+    .pin-btn:hover {
       background: var(--button-hover);
     }
 
+    /* -----------------------------
+       AAW SECTION — ONLY SPACING CHANGES
+       ----------------------------- */
+
+    .aaw {
+      display: none;
+      width: 100%;
+      padding: 64px 12vw;        /* full-width feel with natural margins */
+      text-align: left;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .aaw h2 {
+      text-align: center;
+      font-size: 1.9rem;
+      margin-bottom: 48px;
+    }
+
+    .aaw h3 {
+      font-size: 1.4rem;
+      margin-top: 56px;
+      margin-bottom: 20px;
+    }
+
+    .aaw p {
+      margin-bottom: 26px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--divider);
+      margin: 56px 0;
+    }
+
     footer {
-      padding: 18px 12px 24px;
+      padding: 18px 12px 22px;
       font-size: 0.85rem;
       color: var(--text-mid);
       line-height: 1.6;
-      font-family: "Synonym", sans-serif;
     }
 
     footer a {
@@ -98,85 +132,13 @@
       opacity: 1;
       text-decoration: underline;
     }
-
-    /* PIN overlay */
-    .pin-overlay {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-
-    .pin-box {
-      max-width: 360px;
-      width: 90%;
-      border: 1px solid var(--divider);
-      padding: 28px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .pin-box h2 {
-      font-size: 1.1rem;
-      margin-bottom: 14px;
-    }
-
-    .pin-box input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 14px;
-      font-size: 1rem;
-      text-align: center;
-    }
-
-    /* =========================
-       AAW SPACING ADJUSTMENTS
-       ========================= */
-
-    .aaw {
-      display: none;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 1.25rem;
-      line-height: 1.7;
-
-      /* KEY FIXES */
-      max-width: 720px;          /* readable column */
-      margin: 0 auto;
-      padding: 56px 24px;
-      text-align: left;
-    }
-
-    .aaw h2 {
-      font-size: 1.9rem;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .aaw h3 {
-      font-size: 1.4rem;
-      margin-top: 56px;
-      margin-bottom: 20px;
-    }
-
-    .aaw p {
-      margin-bottom: 22px;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--divider);
-      margin: 56px 0;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- PUBLIC VIEW -->
-  <main id="public">
+  <!-- HOMEPAGE -->
+  <main id="home">
     <img src="evai.svg" alt="EVAI Logo" class="logo" />
 
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
@@ -185,19 +147,18 @@
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <button class="primary-btn" onclick="openPin()">UPS Internal Access — PIN</button>
+    <button class="pin-btn" onclick="enterPIN()">UPS Internal Access — PIN</button>
   </main>
 
-  <!-- AAW CONTENT -->
+  <!-- AAW -->
   <section class="aaw" id="aaw">
-
     <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
 
     <p>
       UPS operates one of the most disciplined and resilient logistics systems in the world.
       At enterprise scale, consistency and clarity form the foundation for reliability.
-      Structured definitions of work allow UPS to operate across geographies, volumes, and
-      operating conditions with confidence that decisions remain stable over time.
+      Structured definitions of work allow UPS to operate across geographies, volumes,
+      and operating conditions with confidence that decisions remain stable over time.
     </p>
 
     <p>
@@ -207,33 +168,23 @@
       performance at global scale.
     </p>
 
-    <hr />
+    <div class="divider"></div>
 
     <h3>STRUCTURED GOVERNANCE AND ENTERPRISE STABILITY</h3>
 
     <p>
-      UPS relies on governed standards to translate human activity into repeatable enterprise
-      outcomes. Through careful definition, review, and validation, work becomes auditable
-      and dependable. This approach supports shared understanding across thousands of routes
-      and facilities.
+      UPS relies on governed standards to translate human activity into repeatable enterprise outcomes.
+      Through careful definition, review, and validation, work becomes auditable and dependable.
+      This approach supports shared understanding across thousands of routes and facilities.
     </p>
 
     <p>
-      The strength of this model lies in its consistency. Decisions become durable. Standards
-      endure. Change occurs deliberately and with intention. This governance model contributes
-      directly to long term operational credibility and labor stability.
+      The strength of this model lies in its consistency. Decisions become durable.
+      Standards endure. Change occurs deliberately and with intention.
+      This governance model contributes directly to long term operational credibility
+      and labor stability.
     </p>
-
   </section>
-
-  <!-- PIN OVERLAY -->
-  <div class="pin-overlay" id="pinOverlay">
-    <div class="pin-box">
-      <h2>UPS Internal Access</h2>
-      <input type="password" id="pinInput" placeholder="Enter PIN" />
-      <button class="primary-btn" onclick="checkPin()">Enter</button>
-    </div>
-  </div>
 
   <footer>
     © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
@@ -243,21 +194,14 @@
   </footer>
 
   <script>
-    const PIN = "0390";
-
-    function openPin() {
-      document.getElementById("pinOverlay").style.display = "flex";
-    }
-
-    function checkPin() {
-      const entered = document.getElementById("pinInput").value;
-      if (entered === PIN) {
-        document.getElementById("pinOverlay").style.display = "none";
-        document.getElementById("public").style.display = "none";
+    function enterPIN() {
+      const pin = prompt("Enter UPS Internal PIN");
+      if (pin === "0390") {
+        document.getElementById("home").style.display = "none";
         document.getElementById("aaw").style.display = "block";
         window.scrollTo(0, 0);
       } else {
-        alert("Incorrect PIN");
+        alert("Access restricted");
       }
     }
   </script>
