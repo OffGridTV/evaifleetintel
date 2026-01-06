@@ -25,7 +25,7 @@
     body {
       min-height: 100vh;
       background: var(--bg);
-      font-family: "Synonym-Regular", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Synonym-Regular", system-ui, sans-serif;
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
@@ -52,7 +52,6 @@
     h1 {
       font-family: "Alpino-Medium", serif;
       font-size: clamp(1.9rem, 3vw, 2.4rem);
-      font-weight: 500;
       margin-bottom: 12px;
     }
 
@@ -66,27 +65,40 @@
 
     .pin-btn {
       background: var(--button);
-      color: #ffffff;
+      color: #fff;
       border: none;
       padding: 14px 36px;
       border-radius: 8px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.2s ease;
     }
 
     .pin-btn:hover {
       background: var(--button-hover);
     }
 
-    /* -----------------------------
-       AAW SECTION — ONLY SPACING CHANGES
-       ----------------------------- */
+    /* Inline PIN */
+    .pin-entry {
+      margin-top: 18px;
+      display: none;
+      gap: 10px;
+      align-items: center;
+    }
 
+    .pin-entry input {
+      padding: 10px 14px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 140px;
+      text-align: center;
+    }
+
+    /* AAW */
     .aaw {
       display: none;
       width: 100%;
-      padding: 64px 12vw;        /* full-width feel with natural margins */
+      padding: 64px 12vw;
       text-align: left;
       font-family: "Times New Roman", Times, serif;
       font-size: 1.25rem;
@@ -119,18 +131,11 @@
       padding: 18px 12px 22px;
       font-size: 0.85rem;
       color: var(--text-mid);
-      line-height: 1.6;
     }
 
     footer a {
       color: inherit;
       text-decoration: none;
-      opacity: 0.85;
-    }
-
-    footer a:hover {
-      opacity: 1;
-      text-decoration: underline;
     }
   </style>
 </head>
@@ -139,7 +144,7 @@
 
   <!-- HOMEPAGE -->
   <main id="home">
-    <img src="evai.svg" alt="EVAI Logo" class="logo" />
+    <img src="evai.svg" class="logo" alt="EVAI Logo" />
 
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
 
@@ -147,7 +152,17 @@
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <button class="pin-btn" onclick="enterPIN()">UPS Internal Access — PIN</button>
+    <button class="pin-btn" onclick="showPIN()">UPS Internal Access — PIN</button>
+
+    <div class="pin-entry" id="pinEntry">
+      <input
+        type="password"
+        id="pinInput"
+        placeholder="Enter PIN"
+        onkeydown="if(event.key==='Enter'){checkPIN()}"
+      />
+      <button class="pin-btn" onclick="checkPIN()">Enter</button>
+    </div>
   </main>
 
   <!-- AAW -->
@@ -157,15 +172,11 @@
     <p>
       UPS operates one of the most disciplined and resilient logistics systems in the world.
       At enterprise scale, consistency and clarity form the foundation for reliability.
-      Structured definitions of work allow UPS to operate across geographies, volumes,
-      and operating conditions with confidence that decisions remain stable over time.
     </p>
 
     <p>
-      This discipline enables durability. It ensures that work performed today aligns with
-      expectations tomorrow. It allows UPS to grow while maintaining trust across operations,
-      labor, finance, and governance. The result is an organization capable of sustained
-      performance at global scale.
+      Structured definitions of work allow UPS to operate across geographies, volumes,
+      and operating conditions with confidence that decisions remain stable over time.
     </p>
 
     <div class="divider"></div>
@@ -174,34 +185,27 @@
 
     <p>
       UPS relies on governed standards to translate human activity into repeatable enterprise outcomes.
-      Through careful definition, review, and validation, work becomes auditable and dependable.
       This approach supports shared understanding across thousands of routes and facilities.
-    </p>
-
-    <p>
-      The strength of this model lies in its consistency. Decisions become durable.
-      Standards endure. Change occurs deliberately and with intention.
-      This governance model contributes directly to long term operational credibility
-      and labor stability.
     </p>
   </section>
 
   <footer>
     © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
-    <a href="https://fleetai.network" target="_blank">FleetAI Network</a> ·
-    <a href="https://evai.us" target="_blank">EVAI.us</a><br />
     <a href="mailto:oem@evaifleetintel.com">Contact EVAI</a>
   </footer>
 
   <script>
-    function enterPIN() {
-      const pin = prompt("Enter UPS Internal PIN");
+    function showPIN() {
+      document.getElementById("pinEntry").style.display = "flex";
+      document.getElementById("pinInput").focus();
+    }
+
+    function checkPIN() {
+      const pin = document.getElementById("pinInput").value;
       if (pin === "0390") {
         document.getElementById("home").style.display = "none";
         document.getElementById("aaw").style.display = "block";
         window.scrollTo(0, 0);
-      } else {
-        alert("Access restricted");
       }
     }
   </script>
