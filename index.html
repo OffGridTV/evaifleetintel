@@ -10,65 +10,46 @@
     :root {
       --bg: #f4f3ef;
       --text-dark: #0f1f33;
-      --text-mid: #1f3552;
       --button: #16263d;
       --button-hover: #1f3b66;
-      --divider: #d6d4cf;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
-      min-height: 100vh;
+      margin: 0;
       background: var(--bg);
-      font-family: "Synonym-Regular", system-ui, sans-serif;
       color: var(--text-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      font-family: "Times New Roman", Times, serif;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      width: 100%;
-      max-width: 900px;
+    /* ===== HOMEPAGE (UNCHANGED) ===== */
+
+    .home {
+      text-align: center;
+      padding: 80px 20px 100px;
     }
 
     .logo {
-      width: min(380px, 80vw);
-      margin-bottom: 20px;
+      max-width: 520px;
+      margin: 0 auto 24px;
     }
 
     h1 {
-      font-family: "Alpino-Medium", serif;
-      font-size: clamp(1.9rem, 3vw, 2.4rem);
-      margin-bottom: 12px;
+      font-size: 2.4rem;
+      margin: 12px 0 8px;
     }
 
-    .framework {
-      font-size: 1rem;
-      letter-spacing: 2.5px;
-      color: var(--text-mid);
-      margin-bottom: 28px;
-      text-transform: uppercase;
+    .subhead {
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      margin-bottom: 36px;
     }
 
     .pin-btn {
       background: var(--button);
       color: #fff;
       border: none;
-      padding: 14px 36px;
-      border-radius: 8px;
+      padding: 14px 28px;
+      border-radius: 10px;
       font-size: 1rem;
       cursor: pointer;
     }
@@ -77,136 +58,179 @@
       background: var(--button-hover);
     }
 
-    /* PIN FIELD */
     .pin-entry {
-      margin-top: 18px;
       display: none;
+      margin-top: 24px;
     }
 
     .pin-entry input {
-      padding: 12px 16px;
+      padding: 12px;
       font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
       width: 160px;
       text-align: center;
     }
 
-    /* AAW */
+    /* ===== AAW DOCUMENT ===== */
+
     .aaw {
       display: none;
       width: 100%;
       padding: 64px 12vw;
       text-align: left;
-      font-family: "Times New Roman", Times, serif;
-      font-size: 1.25rem;
-      line-height: 1.7;
+      font-size: 1.05rem;
+      line-height: 1.55;
     }
 
     .aaw h2 {
       text-align: center;
-      font-size: 1.9rem;
-      margin-bottom: 48px;
+      font-size: 1.6rem;
+      margin-bottom: 32px;
     }
 
     .aaw h3 {
-      font-size: 1.4rem;
-      margin-top: 56px;
-      margin-bottom: 20px;
+      font-size: 1.2rem;
+      margin-top: 36px;
+      margin-bottom: 12px;
     }
 
     .aaw p {
-      margin-bottom: 26px;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--divider);
-      margin: 56px 0;
+      margin-bottom: 14px;
     }
 
     footer {
-      padding: 18px 12px 22px;
-      font-size: 0.85rem;
-      color: var(--text-mid);
-    }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
+      text-align: center;
+      padding: 40px 20px 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HOMEPAGE -->
-  <main id="home">
-    <img src="evai.svg" class="logo" alt="EVAI Logo" />
+  <!-- ===== HOMEPAGE ===== -->
+
+  <section class="home" id="home">
+    <img src="evai.svg" alt="EVAI Logo" class="logo" />
 
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
 
-    <div class="framework">
-      Translation Layers · Phased Reveal · Active Alignment
+    <div class="subhead">
+      TRANSLATION LAYERS · PHASED REVEAL · ACTIVE ALIGNMENT
     </div>
 
-    <button class="pin-btn" id="pinButton" onclick="showPIN()">
-      UPS Internal Access — PIN
-    </button>
+    <button class="pin-btn" onclick="showPin()">UPS Internal Access — PIN</button>
 
     <div class="pin-entry" id="pinEntry">
       <input
         type="password"
-        id="pinInput"
+        inputmode="numeric"
+        maxlength="4"
         placeholder="Enter PIN"
-        onkeydown="if(event.key==='Enter'){checkPIN()}"
+        id="pinInput"
+        onkeydown="if(event.key==='Enter')checkPin()"
       />
     </div>
-  </main>
+  </section>
 
-  <!-- AAW -->
+  <!-- ===== AAW DOCUMENT ===== -->
+
   <section class="aaw" id="aaw">
+
     <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
 
     <p>
       UPS operates one of the most disciplined and resilient logistics systems in the world.
       At enterprise scale, consistency and clarity form the foundation for reliability.
-    </p>
-
-    <p>
       Structured definitions of work allow UPS to operate across geographies, volumes,
       and operating conditions with confidence that decisions remain stable over time.
     </p>
 
-    <div class="divider"></div>
+    <p>
+      This discipline enables durability. It ensures that work performed today aligns
+      with expectations tomorrow. It allows UPS to grow while maintaining trust across
+      operations, labor, finance, and governance. The result is an organization capable
+      of sustained performance at global scale.
+    </p>
 
     <h3>STRUCTURED GOVERNANCE AND ENTERPRISE STABILITY</h3>
 
     <p>
-      UPS relies on governed standards to translate human activity into repeatable enterprise outcomes.
-      This approach supports shared understanding across thousands of routes and facilities.
+      UPS relies on governed standards to translate human activity into repeatable enterprise
+      outcomes. Through careful definition, review, and validation, work becomes auditable
+      and dependable. This approach supports shared understanding across thousands of routes
+      and facilities.
     </p>
+
+    <p>
+      The strength of this model lies in its consistency. Decisions become durable.
+      Standards endure. Change occurs deliberately and with intention. This governance
+      model contributes directly to long term operational credibility and labor stability.
+    </p>
+
+    <h3>THE STRENGTH OF DYNAMIC OBSERVATION</h3>
+
+    <p>
+      Operating environments evolve continuously. Routes change. Vehicle behavior shifts.
+      Dwell accumulates incrementally. Small adjustments emerge over time and distribute
+      unevenly across the network.
+    </p>
+
+    <p>
+      These patterns often develop gradually and do not immediately surface through
+      formal mechanisms. Over time, however, they can influence outcomes in ways that
+      are difficult to attribute to a single source. This is a natural characteristic
+      of operating at global scale.
+    </p>
+
+    <h3>EVAI WITHIN DAILY OPERATIONS</h3>
+
+    <p>
+      EVAI is a neutral observer with vantage that exists seamlessly within daily UPS
+      operations. It does not define work, evaluate performance, or introduce new standards.
+      Instead, EVAI observes how work unfolds in practice and identifies recurring patterns
+      across movement, dwell, transitions, and workload context.
+    </p>
+
+    <p>
+      Within this window, visibility increases while existing governance continues
+      to guide outcomes.
+    </p>
+
+    <h3>PURPOSE OF THE ACTIVE ALIGNMENT WINDOW</h3>
+
+    <p>
+      The Active Alignment Window establishes a limited period of shared perspective
+      between EVAI and UPS. It exists to ensure that observations are interpreted within
+      the context of UPS operating principles, governance models, and enterprise realities.
+    </p>
+
+    <p>
+      This window supports alignment of language, framing, and intent prior to any discussion
+      of systems, tooling, or integration. It ensures that insights are grounded in operational
+      reality while remaining consistent with the structures that enable UPS to operate at scale.
+    </p>
+
   </section>
 
   <footer>
     © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
-    <a href="mailto:oem@evaifleetintel.com">Contact EVAI</a>
+    Contact EVAI
   </footer>
 
   <script>
-    function showPIN() {
-      document.getElementById("pinButton").style.display = "none";
-      const entry = document.getElementById("pinEntry");
-      entry.style.display = "block";
+    function showPin() {
+      document.getElementById("pinEntry").style.display = "block";
       document.getElementById("pinInput").focus();
     }
 
-    function checkPIN() {
+    function checkPin() {
       const pin = document.getElementById("pinInput").value;
       if (pin === "0390") {
         document.getElementById("home").style.display = "none";
         document.getElementById("aaw").style.display = "block";
         window.scrollTo(0, 0);
+      } else {
+        document.getElementById("pinInput").value = "";
       }
     }
   </script>
