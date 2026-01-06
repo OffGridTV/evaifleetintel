@@ -77,7 +77,7 @@
       background: var(--button-hover);
     }
 
-    /* PIN FIELD — hidden until button click */
+    /* PIN FIELD */
     .pin-entry {
       margin-top: 18px;
       display: none;
@@ -150,7 +150,9 @@
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <button class="pin-btn" onclick="showPIN()">UPS Internal Access — PIN</button>
+    <button class="pin-btn" id="pinButton" onclick="showPIN()">
+      UPS Internal Access — PIN
+    </button>
 
     <div class="pin-entry" id="pinEntry">
       <input
@@ -193,7 +195,9 @@
 
   <script>
     function showPIN() {
-      document.getElementById("pinEntry").style.display = "block";
+      document.getElementById("pinButton").style.display = "none";
+      const entry = document.getElementById("pinEntry");
+      entry.style.display = "block";
       document.getElementById("pinInput").focus();
     }
 
