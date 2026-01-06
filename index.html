@@ -8,11 +8,12 @@
 
   <style>
     :root {
-      --bg: #f4f3ef;          /* light stone for black logo */
-      --text-dark: #0f1f33;   /* primary text */
-      --text-mid: #1f3552;    /* framework + footer */
+      --bg: #f4f3ef;
+      --text-dark: #0f1f33;
+      --text-mid: #1f3552;
       --button: #16263d;
       --button-hover: #1f3b66;
+      --divider: #d6d4cf;
     }
 
     * {
@@ -22,7 +23,7 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       background: var(--bg);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark);
@@ -39,7 +40,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 28px;
       width: 100%;
       max-width: 900px;
     }
@@ -64,7 +65,7 @@
       max-width: 90%;
     }
 
-    .contact-btn {
+    .primary-btn {
       background: var(--button);
       color: #ffffff;
       border: none;
@@ -75,15 +76,16 @@
       transition: background 0.2s ease;
     }
 
-    .contact-btn:hover {
+    .primary-btn:hover {
       background: var(--button-hover);
     }
 
     footer {
-      padding: 18px 12px 22px;
+      padding: 18px 12px 24px;
       font-size: 0.85rem;
       color: var(--text-mid);
       line-height: 1.6;
+      text-align: center;
     }
 
     footer a {
@@ -96,11 +98,76 @@
       opacity: 1;
       text-decoration: underline;
     }
+
+    /* PIN Gate */
+    .pin-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .pin-box {
+      max-width: 360px;
+      width: 90%;
+      border: 1px solid var(--divider);
+      padding: 28px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .pin-box h2 {
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .pin-box input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 14px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    /* AAW Content */
+    .aaw {
+      display: none;
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 28px;
+    }
+
+    .aaw h2 {
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+    }
+
+    .aaw h3 {
+      font-size: 1.2rem;
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+
+    .aaw p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .divider {
+      border-top: 1px solid var(--divider);
+      margin: 40px 0;
+    }
   </style>
 </head>
 
 <body>
-  <main>
+
+  <!-- PUBLIC HOMEPAGE -->
+  <main id="public">
     <img src="evai.svg" alt="EVAI Logo" class="logo" />
 
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
@@ -109,16 +176,85 @@
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <a href="mailto:oem@evaifleetintel.com">
-      <button class="contact-btn">Contact EVAI</button>
-    </a>
+    <button class="primary-btn" onclick="openPin()">UPS Internal Access — PIN</button>
   </main>
+
+  <!-- AAW CONTENT -->
+  <section class="aaw" id="aaw">
+    <h2>Active Alignment Window (AAW)</h2>
+
+    <p>
+      This document defines a limited Active Alignment Window between EVAI and UPS.
+      It exists to align on how on-road work is observed, contextualized, and translated
+      prior to any system access, integrations, or tooling discussions.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3>On-Road Work Management (ORWM)</h3>
+    <p>
+      ORWM focuses on the reality of work as it occurs on route — vehicle movement,
+      dwell behavior, transitions, and workload context — independent of internal systems
+      or performance evaluation.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3>EVAI’s Role</h3>
+    <p>
+      EVAI operates as an independent observational layer. It does not access Orion,
+      DIAD, or UPS operational systems. EVAI observes on-road conditions and translates
+      them into neutral operational signal.
+    </p>
+
+    <div class="divider"></div>
+
+    <h3>Scope of This AAW</h3>
+    <p>
+      This AAW is strictly limited to four pages of ORWM-related alignment between
+      EVAI and UPS. No additional documents, phases, or materials are included or implied.
+    </p>
+
+    <p style="margin-top:32px; font-size:0.85rem; color:var(--text-mid);">
+      Pre-NDA observational framework · Internal circulation permitted
+    </p>
+  </section>
+
+  <!-- PIN OVERLAY -->
+  <div class="pin-overlay" id="pinOverlay">
+    <div class="pin-box">
+      <h2>UPS Internal Access</h2>
+      <input type="password" id="pinInput" placeholder="Enter PIN" />
+      <button class="primary-btn" onclick="checkPin()">Enter</button>
+    </div>
+  </div>
 
   <footer>
     © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
     <a href="https://fleetai.network" target="_blank">FleetAI Network</a> ·
-    <a href="https://evai.us" target="_blank">EVAI.us</a>
+    <a href="https://evai.us" target="_blank">EVAI.us</a><br />
+    <a href="mailto:oem@evaifleetintel.com">Contact EVAI</a>
   </footer>
+
+  <script>
+    const PIN = "0390"; // replace before sharing
+
+    function openPin() {
+      document.getElementById("pinOverlay").style.display = "flex";
+    }
+
+    function checkPin() {
+      const entered = document.getElementById("pinInput").value;
+      if (entered === PIN) {
+        document.getElementById("pinOverlay").style.display = "none";
+        document.getElementById("public").style.display = "none";
+        document.getElementById("aaw").style.display = "block";
+        window.scrollTo(0, 0);
+      } else {
+        alert("Incorrect PIN");
+      }
+    }
+  </script>
+
 </body>
 </html>
-
