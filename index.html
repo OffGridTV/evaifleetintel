@@ -25,7 +25,7 @@
     body {
       min-height: 100vh;
       background: var(--bg);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: "Times New Roman", Times, serif;
       color: var(--text-dark);
       display: flex;
       flex-direction: column;
@@ -40,7 +40,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 28px;
+      padding: 32px;
       width: 100%;
       max-width: 900px;
     }
@@ -51,18 +51,17 @@
     }
 
     h1 {
-      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-size: 2rem;
       font-weight: 600;
       margin-bottom: 18px;
     }
 
     .framework {
-      font-size: clamp(1rem, 2.2vw, 1.2rem);
-      letter-spacing: 2.5px;
+      font-size: 1rem;
+      letter-spacing: 2px;
       color: var(--text-mid);
       margin-bottom: 42px;
       text-transform: uppercase;
-      max-width: 90%;
     }
 
     .primary-btn {
@@ -99,7 +98,7 @@
       text-decoration: underline;
     }
 
-    /* PIN Gate */
+    /* PIN overlay */
     .pin-overlay {
       position: fixed;
       inset: 0;
@@ -130,43 +129,51 @@
       margin-bottom: 14px;
       font-size: 1rem;
       text-align: center;
+      font-family: "Times New Roman", Times, serif;
     }
 
-    /* AAW Content */
+    /* AAW content */
     .aaw {
       display: none;
       text-align: left;
       max-width: 900px;
       margin: 0 auto;
-      padding: 48px 28px;
+      padding: 48px 32px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .aaw h2,
+    .aaw h3 {
+      margin-bottom: 16px;
     }
 
     .aaw h2 {
       font-size: 1.6rem;
-      margin-bottom: 18px;
+      text-align: center;
+      margin-bottom: 32px;
     }
 
     .aaw h3 {
       font-size: 1.2rem;
-      margin-top: 36px;
-      margin-bottom: 12px;
+      margin-top: 40px;
     }
 
     .aaw p {
-      line-height: 1.7;
       margin-bottom: 16px;
     }
 
-    .divider {
+    hr {
+      border: none;
       border-top: 1px solid var(--divider);
-      margin: 40px 0;
+      margin: 36px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- PUBLIC HOMEPAGE -->
+  <!-- PUBLIC VIEW -->
   <main id="public">
     <img src="evai.svg" alt="EVAI Logo" class="logo" />
 
@@ -180,113 +187,108 @@
   </main>
 
   <!-- AAW CONTENT -->
- <section class="aaw">
+  <section class="aaw" id="aaw">
 
-  <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
+    <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
 
-  <p>
-    UPS operates one of the most disciplined and resilient logistics systems in the world.
-    At enterprise scale, consistency and clarity form the foundation for reliability.
-    Structured definitions of work allow UPS to operate across geographies, volumes, and
-    operating conditions with confidence that decisions remain stable over time.
-  </p>
-
-  <p>
-    This discipline enables durability. It ensures that work performed today aligns with
-    expectations tomorrow. It allows UPS to grow while maintaining trust across operations,
-    labor, finance, and governance. The result is an organization capable of sustained
-    performance at global scale.
-  </p>
-
-  <hr />
-
-  <h3>STRUCTURED GOVERNANCE AND ENTERPRISE STABILITY</h3>
-
-  <p>
-    UPS relies on governed standards to translate human activity into repeatable enterprise
-    outcomes. Through careful definition, review, and validation, work becomes auditable
-    and dependable. This approach supports shared understanding across thousands of routes
-    and facilities.
-  </p>
-
-  <p>
-    The strength of this model lies in its consistency. Decisions become durable. Standards
-    endure. Change occurs deliberately and with intention. This governance model contributes
-    directly to long term operational credibility and labor stability.
-  </p>
-
-  <hr />
-
-  <h3>CONTINUOUS OPERATIONAL REALITY</h3>
-
-  <p>
-    Large scale systems exist within environments that evolve continuously. Routes adjust.
-    Vehicle behavior shifts. Dwell patterns develop incrementally. Small variations appear
-    quietly and distribute unevenly across the network.
-  </p>
-
-  <p>
-    These dynamics emerge naturally within complex systems. Many develop gradually and
-    remain dispersed, shaping outcomes over time. Awareness of these patterns supports
-    thoughtful consideration and informed decision making across the organization.
-  </p>
-
-  <hr />
-
-  <h3>EVAI AS AN OBSERVATIONAL LAYER</h3>
-
-  <p>
-    EVAI exists as a neutral observational layer with vantage that seamlessly exists within
-    UPS daily operations. Its role centers on continuous awareness and contextual
-    understanding. EVAI observes conditions as they unfold, identifying persistence,
-    recurrence, and spread across day to day activity.
-  </p>
-
-  <p>
-    This perspective allows patterns to surface earlier in their lifecycle. It supports
-    informed dialogue by providing context around how conditions evolve across routes,
-    vehicles, and behaviors. EVAI operates with restraint and respect for established
-    governance structures, contributing visibility with calm and discipline.
-  </p>
-
-  <hr />
-
-  <h3>STRENGTHENING ENTERPRISE ALIGNMENT</h3>
-
-  <p>
-    By operating upstream of formal processes, EVAI complements the disciplined structure
-    already present within UPS. It provides contextual awareness that supports thoughtful
-    timing and prioritization. This alignment helps ensure that when enterprise attention is
-    applied, conditions reflect consistency and durability.
-  </p>
-
-  <p>
-    The result is a strengthened connection between daily operational reality and enterprise
-    level decision making. Awareness improves while discipline remains intact. Standards
-    continue to serve as enduring reference points within a complex operating system.
-  </p>
-
-  <hr />
-
-  <h3>THE ACTIVE ALIGNMENT WINDOW</h3>
-
-  <p>
-    The Active Alignment Window represents the space where EVAI and UPS operate in parallel
-    with shared respect and clear boundaries.
-  </p>
-
-  <p>
-    <strong>
-      Within this window, visibility increases while existing governance continues to guide
-      outcomes.
-    </strong>
-  </p>
-
-</section>
-
-    <p style="margin-top:32px; font-size:0.85rem; color:var(--text-mid);">
-      Pre-NDA observational framework · Internal circulation permitted
+    <p>
+      UPS operates one of the most disciplined and resilient logistics systems in the world.
+      At enterprise scale, consistency and clarity form the foundation for reliability.
+      Structured definitions of work allow UPS to operate across geographies, volumes, and
+      operating conditions with confidence that decisions remain stable over time.
     </p>
+
+    <p>
+      This discipline enables durability. It ensures that work performed today aligns with
+      expectations tomorrow. It allows UPS to grow while maintaining trust across operations,
+      labor, finance, and governance. The result is an organization capable of sustained
+      performance at global scale.
+    </p>
+
+    <hr />
+
+    <h3>STRUCTURED GOVERNANCE AND ENTERPRISE STABILITY</h3>
+
+    <p>
+      UPS relies on governed standards to translate human activity into repeatable enterprise
+      outcomes. Through careful definition, review, and validation, work becomes auditable
+      and dependable. This approach supports shared understanding across thousands of routes
+      and facilities.
+    </p>
+
+    <p>
+      The strength of this model lies in its consistency. Decisions become durable. Standards
+      endure. Change occurs deliberately and with intention. This governance model contributes
+      directly to long term operational credibility and labor stability.
+    </p>
+
+    <hr />
+
+    <h3>CONTINUOUS OPERATIONAL REALITY</h3>
+
+    <p>
+      Large scale systems exist within environments that evolve continuously. Routes adjust.
+      Vehicle behavior shifts. Dwell patterns develop incrementally. Small variations appear
+      quietly and distribute unevenly across the network.
+    </p>
+
+    <p>
+      These dynamics emerge naturally within complex systems. Many develop gradually and
+      remain dispersed, shaping outcomes over time. Awareness of these patterns supports
+      thoughtful consideration and informed decision making across the organization.
+    </p>
+
+    <hr />
+
+    <h3>EVAI AS AN OBSERVATIONAL LAYER</h3>
+
+    <p>
+      EVAI exists as a neutral observational layer with vantage that seamlessly exists within
+      UPS daily operations. Its role centers on continuous awareness and contextual
+      understanding. EVAI observes conditions as they unfold, identifying persistence,
+      recurrence, and spread across day to day activity.
+    </p>
+
+    <p>
+      This perspective allows patterns to surface earlier in their lifecycle. It supports
+      informed dialogue by providing context around how conditions evolve across routes,
+      vehicles, and behaviors. EVAI operates with restraint and respect for established
+      governance structures, contributing visibility with calm and discipline.
+    </p>
+
+    <hr />
+
+    <h3>STRENGTHENING ENTERPRISE ALIGNMENT</h3>
+
+    <p>
+      By operating upstream of formal processes, EVAI complements the disciplined structure
+      already present within UPS. It provides contextual awareness that supports thoughtful
+      timing and prioritization. This alignment helps ensure that when enterprise attention is
+      applied, conditions reflect consistency and durability.
+    </p>
+
+    <p>
+      The result is a strengthened connection between daily operational reality and enterprise
+      level decision making. Awareness improves while discipline remains intact. Standards
+      continue to serve as enduring reference points within a complex operating system.
+    </p>
+
+    <hr />
+
+    <h3>THE ACTIVE ALIGNMENT WINDOW</h3>
+
+    <p>
+      The Active Alignment Window represents the space where EVAI and UPS operate in parallel
+      with shared respect and clear boundaries.
+    </p>
+
+    <p>
+      <strong>
+        Within this window, visibility increases while existing governance continues to guide
+        outcomes.
+      </strong>
+    </p>
+
   </section>
 
   <!-- PIN OVERLAY -->
@@ -306,7 +308,7 @@
   </footer>
 
   <script>
-    const PIN = "0390"; // replace before sharing
+    const PIN = "0390";
 
     function openPin() {
       document.getElementById("pinOverlay").style.display = "flex";
@@ -327,4 +329,3 @@
 
 </body>
 </html>
-
