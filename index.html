@@ -58,16 +58,16 @@
     }
 
     .logo {
-      font-family: 'Synonym', sans-serif;
-      font-size: 140px; /* intentionally reduced */
-      letter-spacing: 2px;
-      margin-bottom: 24px;
+      width: 420px; /* controlled, not massive */
+      max-width: 90vw;
+      margin-bottom: 26px;
     }
 
     .headline {
       font-family: 'Alpino', serif;
       font-size: 36px;
       margin-bottom: 14px;
+      font-weight: normal;
     }
 
     .subhead {
@@ -75,6 +75,7 @@
       font-size: 14px;
       letter-spacing: 3px;
       color: var(--text-mid);
+      font-weight: normal;
     }
 
     footer {
@@ -95,12 +96,12 @@
     }
 
     @media (max-width: 768px) {
-      .logo {
-        font-size: 96px;
-      }
-
       .headline {
         font-size: 28px;
+      }
+
+      .logo {
+        width: 300px;
       }
     }
   </style>
@@ -108,7 +109,12 @@
 
 <body>
   <div class="container">
-    <div class="logo">EVAI</div>
+    <!-- SVG LOGO -->
+    <img
+      src="/assets/evai-logo.svg"
+      alt="EVAI"
+      class="logo"
+    />
 
     <div class="headline">
       Enterprise Vehicle Architecture Intelligence
