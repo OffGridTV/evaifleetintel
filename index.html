@@ -2,187 +2,129 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>EVAI</title>
+  <title>EVAI — Enterprise Vehicle Architecture Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="canonical" href="https://evaifleetintel.com/" />
 
+  <!-- Fonts -->
   <style>
     @font-face {
-      font-family: "Alpino";
-      src: url("fonts/Alpino-Medium.otf") format("opentype");
+      font-family: 'Alpino';
+      src: url('/fonts/Alpino-Medium.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
     }
+
     @font-face {
-      font-family: "Synonym";
-      src: url("fonts/Synonym-Regular.otf") format("opentype");
+      font-family: 'Synonym';
+      src: url('/fonts/Synonym-Regular.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    :root {
+      --bg: #f6f4ef;
+      --text-dark: #0f1f33;
+      --text-mid: #1f3552;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* NO SCROLLING */
+      background: var(--bg);
+      color: var(--text-dark);
     }
 
     body {
-      margin: 0;
-      background: #f4f3ef;
-      color: #0f1f33;
-      font-family: "Synonym", serif;
-    }
-
-    /* ===== HOMEPAGE ===== */
-
-    #home {
-      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: space-between;
       text-align: center;
-      padding: 60px 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
     }
 
     .logo {
-      max-width: 420px;
-      margin-bottom: 22px;
+      font-family: 'Synonym', sans-serif;
+      font-size: 140px; /* intentionally reduced */
+      letter-spacing: 2px;
+      margin-bottom: 24px;
     }
 
-    h1 {
-      font-family: "Alpino", serif;
-      font-size: 40px;
-      margin: 10px 0 8px;
+    .headline {
+      font-family: 'Alpino', serif;
+      font-size: 36px;
+      margin-bottom: 14px;
     }
 
-    .sub {
-      letter-spacing: 3px;
+    .subhead {
+      font-family: 'Synonym', sans-serif;
       font-size: 14px;
-      margin-bottom: 40px;
-    }
-
-    .btn {
-      background: #16263d;
-      color: #fff;
-      border: none;
-      padding: 14px 34px;
-      font-size: 16px;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-
-    .pin-area {
-      margin-top: 22px;
-      display: none;
-    }
-
-    .pin-input {
-      padding: 12px 14px;
-      font-size: 16px;
-      width: 160px;
-      text-align: center;
-    }
-
-    /* ===== AAW ===== */
-
-    .aaw {
-      display: none;
-      padding: 60px 80px 80px;
-      font-family: "Synonym", serif;
-    }
-
-    .aaw h2 {
-      font-family: "Alpino", serif;
-      font-size: 28px;
-      margin-top: 36px;
-    }
-
-    .aaw p {
-      font-size: 16px;
-      line-height: 1.45;
-      margin: 10px 0 16px;
+      letter-spacing: 3px;
+      color: var(--text-mid);
     }
 
     footer {
-      text-align: center;
-      padding: 40px 0;
-      font-size: 14px;
+      font-family: 'Synonym', sans-serif;
+      font-size: 12px;
+      color: var(--text-mid);
+      padding-bottom: 18px;
+    }
+
+    footer a {
+      color: var(--text-mid);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 96px;
+      }
+
+      .headline {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <div class="logo">EVAI</div>
 
-<!-- HOMEPAGE -->
-<div id="home">
-  <img src="evai.svg" alt="EVAI logo" class="logo" />
+    <div class="headline">
+      Enterprise Vehicle Architecture Intelligence
+    </div>
 
-  <h1>Enterprise Vehicle Architecture Intelligence</h1>
-
-  <div class="sub">TRANSLATION LAYERS · PHASED REVEAL · ACTIVE ALIGNMENT</div>
-
-  <button class="btn" onclick="showPin()">UPS Internal Access — PIN</button>
-
-  <div class="pin-area" id="pinArea">
-    <input
-      type="password"
-      class="pin-input"
-      placeholder="Enter PIN"
-      id="pinInput"
-      onkeydown="if(event.key==='Enter'){checkPin()}"
-    />
+    <div class="subhead">
+      TRANSLATION LAYERS · PHASED REVEAL · ACTIVE ALIGNMENT
+    </div>
   </div>
-</div>
 
-<!-- AAW -->
-<div id="aaw" class="aaw">
-  <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
-
-  <p>UPS operates one of the most disciplined and resilient logistics systems in the world. At enterprise scale, consistency and clarity form the foundation for reliability. Structured definitions of work allow UPS to operate across geographies, volumes, and operating conditions with confidence that decisions remain stable over time.</p>
-
-  <p>This discipline enables durability. It ensures that work performed today aligns with expectations tomorrow. It allows UPS to grow while maintaining trust across operations, labor, finance, and governance. The result is an organization capable of sustained performance at global scale.</p>
-
-  <h2>STRUCTURED GOVERNANCE AND ENTERPRISE STABILITY</h2>
-
-  <p>UPS relies on governed standards to translate human activity into repeatable enterprise outcomes. Through careful definition, review, and validation, work becomes auditable and dependable. This approach reduces ambiguity and allows the organization to operate with shared understanding across thousands of routes and facilities.</p>
-
-  <p>The strength of this model lies in its consistency. Decisions become durable. Standards endure. Change occurs deliberately and with intention. This governance model has contributed directly to UPS long term operational credibility and labor stability.</p>
-
-  <h2>THE ROLE OF CONTINUOUS OPERATIONAL REALITY</h2>
-
-  <p>Large scale systems exist within continuously evolving environments. Routes adjust. Vehicle behavior shifts. Dwell patterns develop incrementally. Small variations appear quietly and distribute unevenly across the network.</p>
-
-  <p>These dynamics emerge naturally within complex systems. Many develop gradually and remain dispersed, shaping outcomes over time rather than presenting as singular events. Awareness of these patterns supports thoughtful consideration and informed decision making across the organization.</p>
-
-  <h2>EVAI AS AN OBSERVATIONAL LAYER</h2>
-
-  <p>EVAI exists as a neutral observational layer with vantage that seamlessly exists within UPS daily operations. Its role centers on continuous awareness rather than definition or enforcement. EVAI observes conditions as they unfold, identifying persistence, recurrence, and spread across day to day activity.</p>
-
-  <p>This perspective allows patterns to surface earlier in their lifecycle. It supports informed dialogue by providing context around how conditions evolve across routes, vehicles, and behaviors. EVAI operates with restraint and respect for existing governance structures, contributing clarity through observation.</p>
-
-  <h2>STRENGTHENING ENTERPRISE ALIGNMENT</h2>
-
-  <p>By operating upstream of formal processes, EVAI complements the disciplined structure already present within UPS. It provides contextual awareness that supports thoughtful timing and prioritization. This alignment helps ensure that when enterprise attention is applied, conditions reflect consistency and durability.</p>
-
-  <p>The result is a strengthened connection between daily operational reality and enterprise level decision making. Awareness improves while discipline remains intact. Standards continue to serve their intended role as enduring reference points within a complex operating system.</p>
-
-  <h2>THE ACTIVE ALIGNMENT WINDOW</h2>
-
-  <p>The Active Alignment Window represents the space where EVAI and UPS operate in parallel with shared respect and clear boundaries. Within this window, visibility increases while existing governance continues to guide outcomes.</p>
-
-  <p>This alignment preserves the strengths that define UPS while extending perspective across evolving operational conditions. It reflects a shared commitment to durability, clarity, and long term enterprise health.</p>
-</div>
-
-<footer>
-  © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
-  Contact EVAI
-</footer>
-
-<script>
-  function showPin() {
-    document.getElementById("pinArea").style.display = "block";
-    document.getElementById("pinInput").focus();
-  }
-
-  function checkPin() {
-    if (document.getElementById("pinInput").value === "0390") {
-      document.getElementById("home").style.display = "none";
-      document.getElementById("aaw").style.display = "block";
-      window.scrollTo(0,0);
-    }
-  }
-</script>
-
+  <footer>
+    © 2025 EVAI. All rights reserved.
+    |
+    <a href="https://fleetai.network" target="_blank">fleetai.network</a>
+    |
+    <a href="https://evai.us" target="_blank">evai.us</a>
+  </footer>
 </body>
 </html>
