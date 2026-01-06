@@ -23,16 +23,21 @@
       font-family: "Synonym", serif;
     }
 
-    .center {
+    /* ===== HOMEPAGE ===== */
+
+    #home {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 90px 40px;
+      padding: 60px 40px;
     }
 
     .logo {
-      font-size: 140px;
-      font-family: "Alpino", serif;
-      letter-spacing: -4px;
-      margin-bottom: 20px;
+      max-width: 420px;
+      margin-bottom: 22px;
     }
 
     h1 {
@@ -66,12 +71,15 @@
       padding: 12px 14px;
       font-size: 16px;
       width: 160px;
+      text-align: center;
     }
+
+    /* ===== AAW ===== */
 
     .aaw {
       display: none;
       padding: 60px 80px 80px;
-      max-width: none;
+      font-family: "Synonym", serif;
     }
 
     .aaw h2 {
@@ -96,9 +104,12 @@
 
 <body>
 
-<div id="home" class="center">
-  <div class="logo">EVAI</div>
+<!-- HOMEPAGE -->
+<div id="home">
+  <img src="evai.svg" alt="EVAI logo" class="logo" />
+
   <h1>Enterprise Vehicle Architecture Intelligence</h1>
+
   <div class="sub">TRANSLATION LAYERS · PHASED REVEAL · ACTIVE ALIGNMENT</div>
 
   <button class="btn" onclick="showPin()">UPS Internal Access — PIN</button>
@@ -114,6 +125,7 @@
   </div>
 </div>
 
+<!-- AAW -->
 <div id="aaw" class="aaw">
   <h2>EVAI AND UPS ACTIVE ALIGNMENT WINDOW</h2>
 
@@ -153,7 +165,7 @@
 </div>
 
 <footer>
-  © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br/>
+  © 2025 EVAI · Enterprise Vehicle Architecture Intelligence<br />
   Contact EVAI
 </footer>
 
