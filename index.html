@@ -6,30 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
-    /* =========================
-       FONTS
-       ========================= */
-    @font-face {
-      font-family: "Alpino";
-      src: url("fonts/Alpino-Medium.otf") format("opentype");
-      font-weight: 500;
-    }
-
-    @font-face {
-      font-family: "Synonym";
-      src: url("fonts/Synonym-Regular.otf") format("opentype");
-      font-weight: 400;
-    }
-
-    @font-face {
-      font-family: "Synonym";
-      src: url("fonts/Synonym-Medium.otf") format("opentype");
-      font-weight: 500;
-    }
-
-    /* =========================
-       BASE
-       ========================= */
+    /* ===== Base ===== */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -37,136 +14,182 @@
     }
 
     body {
-      height: 100vh;
+      min-height: 100vh;
       background: #f6f4ef;
       color: #0f1f33;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: "Synonym", sans-serif;
     }
 
-    /* =========================
-       ACCESS GATE
-       ========================= */
-    .gate {
-      max-width: 360px;
-      width: 100%;
+    .container {
+      max-width: 900px;
+      padding: 80px 24px 60px;
     }
 
-    .gate input {
-      width: 100%;
-      padding: 14px;
-      font-size: 14px;
-      border: 1px solid #c5ccd6;
-      background: transparent;
-      text-align: center;
-      letter-spacing: 0.2em;
-    }
-
-    .gate small {
-      display: block;
-      margin-top: 14px;
-      font-size: 12px;
-      color: #5a6b82;
-    }
-
-    /* =========================
-       MAIN CONTENT
-       ========================= */
-    .content {
-      display: none;
-      transform: translateY(40px);
-    }
-
-    .evai-logo {
+    /* ===== Logo ===== */
+    .logo {
       width: 320px;
-      margin-bottom: 22px;
+      margin: 0 auto 28px;
+      display: block;
     }
 
+    /* ===== Headline ===== */
     h1 {
-      font-family: "Alpino", serif;
-      font-size: 42px;
-      margin-bottom: 14px;
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      letter-spacing: 0.01em;
     }
 
     .tagline {
       font-size: 13px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: #1f3552;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
     }
 
-    .nda-note {
-      font-size: 14px;
-      font-weight: 500;
-      color: #2a3f5f;
+    /* ===== NDA Posture ===== */
+    .nda-posture {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #243b5a;
+      max-width: 640px;
+      margin: 0 auto 48px;
+    }
+
+    /* ===== Access Gate ===== */
+    .gate {
       margin-bottom: 60px;
     }
 
-    footer {
-      position: absolute;
-      bottom: 24px;
-      font-size: 13px;
+    .gate input {
+      width: 280px;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1.5px solid #3b82f6;
+      font-size: 14px;
+      text-align: center;
+      letter-spacing: 0.12em;
+      outline: none;
+      background: #fff;
+    }
+
+    .gate small {
+      display: block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #5b6f8f;
+      letter-spacing: 0.08em;
+    }
+
+    /* ===== Post Access ===== */
+    .post-access {
+      display: none;
+      margin-top: 60px;
+      padding-top: 60px;
+      border-top: 1px solid #d9e1ec;
+    }
+
+    .post-access h2 {
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .post-access p {
+      font-size: 15px;
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto 16px;
       color: #1f3552;
     }
 
+    /* ===== Footer ===== */
+    footer {
+      margin-top: 80px;
+      font-size: 12px;
+      color: #5b6f8f;
+      letter-spacing: 0.05em;
+    }
+
     footer a {
-      color: #1f3552;
+      color: inherit;
       text-decoration: none;
       margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ACCESS GATE -->
-  <div class="gate" id="gate">
-    <input
-      type="password"
-      id="codeInput"
-      placeholder="ACCESS CODE"
-      autofocus
-    />
-    <small>Authorized executive access</small>
-  </div>
+  <div class="container">
 
-  <!-- MAIN CONTENT -->
-  <div class="content" id="content">
-    <img src="evai.svg" alt="EVAI" class="evai-logo" />
+    <!-- LOGO -->
+    <img src="evai.svg" alt="EVAI" class="logo" />
 
+    <!-- TITLE -->
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
 
+    <!-- TAGLINE -->
     <div class="tagline">
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <div class="nda-note">
-      This site reflects EVAI’s executive posture. Specifics, sequencing, and application are disclosed under NDA.
+    <!-- NDA POSTURE -->
+    <div class="nda-posture">
+      This site reflects EVAI’s executive posture.  
+      Structure, sequencing, and application are intentionally governed and disclosed under mutual NDA.
     </div>
-  </div>
 
-  <footer>
-    © 2025 EVAI ·
-    <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
-    <a href="https://evai.us" target="_blank">evai.us</a>
-  </footer>
+    <!-- ACCESS GATE -->
+    <div class="gate" id="gate">
+      <input
+        type="password"
+        id="codeInput"
+        placeholder="ACCESS CODE"
+        aria-label="Access Code"
+      />
+      <small>Authorized executive access</small>
+    </div>
+
+    <!-- POST ACCESS CONTENT -->
+    <div class="post-access" id="postAccess">
+      <h2>Executive Engagement Overview</h2>
+      <p>
+        <!-- Placeholder — we will finalize this next -->
+        Post-access content appears here. This section provides alignment context,
+        sequencing clarity, and engagement framing sufficient to confirm NDA readiness.
+      </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      © 2025 EVAI ·
+      <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
+      <a href="https://evai.us" target="_blank">evai.us</a>
+    </footer>
+
+  </div>
 
   <script>
     const ACCESS_CODE = "NOF2026";
 
     const input = document.getElementById("codeInput");
     const gate = document.getElementById("gate");
-    const content = document.getElementById("content");
+    const postAccess = document.getElementById("postAccess");
 
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") {
         if (input.value === ACCESS_CODE) {
           gate.style.display = "none";
-          content.style.display = "block";
+          postAccess.style.display = "block";
         } else {
           input.value = "";
           input.placeholder = "INVALID CODE";
@@ -177,4 +200,3 @@
 
 </body>
 </html>
-
