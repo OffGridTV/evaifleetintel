@@ -7,41 +7,28 @@
 
   <style>
     /* =========================
-       FONT DECLARATIONS
+       FONTS
        ========================= */
     @font-face {
       font-family: "Alpino";
       src: url("fonts/Alpino-Medium.otf") format("opentype");
       font-weight: 500;
-      font-style: normal;
     }
 
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Regular.otf") format("opentype");
       font-weight: 400;
-      font-style: normal;
     }
 
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Medium.otf") format("opentype");
       font-weight: 500;
-      font-style: normal;
     }
-/* =========================
-   NDA POSTURE NOTE
-   ========================= */
-.nda-note {
-  margin-top: 18px;
-  font-family: "Synonym", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2a3f5f;
-  opacity: 1;
-}
+
     /* =========================
-       BASE RESET
+       BASE
        ========================= */
     * {
       box-sizing: border-box;
@@ -49,108 +36,75 @@
       padding: 0;
     }
 
-    html, body {
-      height: 100%;
+    body {
+      height: 100vh;
+      background: #f6f4ef;
+      color: #0f1f33;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: "Synonym", sans-serif;
     }
 
-body {
-  background: #f6f4ef;
-  color: #0f1f33;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  padding-top: 60px;
-}
     /* =========================
-       LOGO
+       ACCESS GATE
        ========================= */
+    .gate {
+      max-width: 360px;
+      width: 100%;
+    }
+
+    .gate input {
+      width: 100%;
+      padding: 14px;
+      font-size: 14px;
+      border: 1px solid #c5ccd6;
+      background: transparent;
+      text-align: center;
+      letter-spacing: 0.2em;
+    }
+
+    .gate small {
+      display: block;
+      margin-top: 14px;
+      font-size: 12px;
+      color: #5a6b82;
+    }
+
+    /* =========================
+       MAIN CONTENT
+       ========================= */
+    .content {
+      display: none;
+      transform: translateY(40px);
+    }
+
     .evai-logo {
       width: 320px;
-      height: auto;
-      margin-bottom: 28px;
-      display: block;
+      margin-bottom: 22px;
     }
 
-    /* =========================
-       HEADLINE
-       ========================= */
     h1 {
       font-family: "Alpino", serif;
-      font-size: 40px;
-      font-weight: 500;
+      font-size: 42px;
       margin-bottom: 14px;
     }
 
-    /* =========================
-       TAGLINE
-       ========================= */
     .tagline {
-      font-family: "Synonym", sans-serif;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: #1f3552;
+      margin-bottom: 16px;
     }
 
-    /* =========================
-       FOOTER
-       ========================= */
+    .nda-note {
+      font-size: 14px;
+      font-weight: 500;
+      color: #2a3f5f;
+      margin-bottom: 60px;
+    }
+
     footer {
-      position: absolute;
-      bottom: 24px;
-      font-family: "Synonym", sans-serif;
-      font-size: 13px;
-      color: #1f3552;
-    }
-
-    footer a {
-      color: #1f3552;
-      text-decoration: none;
-      margin: 0 6px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- SVG LOGO -->
-  <img
-    src="evai.svg"
-    alt="EVAI"
-    class="evai-logo"
-  />
-
-  <!-- TITLE -->
-  <h1>Enterprise Vehicle Architecture Intelligence</h1>
-
-  <!-- TAGLINE -->
- <div class="tagline">
-  Translation Layers · Phased Reveal · Active Alignment
-</div>
-
-<div class="nda-note">
-  This site reflects EVAI’s executive posture. Specifics, sequencing, and application are disclosed under NDA.
-</div>
-
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 EVAI. All rights reserved. |
-    <a href="https://fleetai.network" target="_blank" rel="noopener">fleetai.network</a> |
-    <a href="https://evai.us" target="_blank" rel="noopener">evai.us</a>
-  </footer>
-
-</body>
-</html>
-
-
-
-
-
+      position: absolu
