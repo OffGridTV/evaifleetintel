@@ -6,6 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
+    /* ===== Fonts ===== */
+    @font-face {
+      font-family: "Alpino";
+      src: url("fonts/Alpino-Medium.otf") format("opentype");
+      font-weight: 500;
+    }
+
+    @font-face {
+      font-family: "Synonym";
+      src: url("fonts/Synonym-Regular.otf") format("opentype");
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: "Synonym";
+      src: url("fonts/Synonym-Medium.otf") format("opentype");
+      font-weight: 500;
+    }
+
     /* ===== Base ===== */
     * {
       box-sizing: border-box;
@@ -15,9 +34,9 @@
 
     body {
       min-height: 100vh;
-      background: #f6f4ef;
+      background: #f4f7fb;
       color: #0f1f33;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Synonym", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -26,39 +45,41 @@
 
     .container {
       max-width: 900px;
-      padding: 80px 24px 60px;
+      padding: 70px 24px 40px;
     }
 
     /* ===== Logo ===== */
     .logo {
       width: 320px;
-      margin: 0 auto 28px;
+      margin: 0 auto 26px;
       display: block;
     }
 
     /* ===== Headline ===== */
     h1 {
+      font-family: "Alpino", serif;
       font-size: 34px;
-      font-weight: 600;
+      font-weight: 500;
       margin-bottom: 12px;
       letter-spacing: 0.01em;
     }
 
     .tagline {
       font-size: 13px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #1f3552;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     /* ===== NDA Posture ===== */
     .nda-posture {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #243b5a;
-      max-width: 640px;
-      margin: 0 auto 48px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #2a3f5f;
+      max-width: 720px;
+      margin: 0 auto 44px;
+      white-space: nowrap;
     }
 
     /* ===== Access Gate ===== */
@@ -70,20 +91,17 @@
       width: 280px;
       padding: 14px 16px;
       border-radius: 6px;
-      border: 1.5px solid #3b82f6;
+      border: 1.5px solid #8fa4c8;
       font-size: 14px;
       text-align: center;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       outline: none;
-      background: #fff;
+      background: #ffffff;
+      color: #0f1f33;
     }
 
-    .gate small {
-      display: block;
-      margin-top: 10px;
-      font-size: 12px;
-      color: #5b6f8f;
-      letter-spacing: 0.08em;
+    .gate input::placeholder {
+      color: #6b7f9d;
     }
 
     /* ===== Post Access ===== */
@@ -91,10 +109,11 @@
       display: none;
       margin-top: 60px;
       padding-top: 60px;
-      border-top: 1px solid #d9e1ec;
+      border-top: 1px solid #d8e1ee;
     }
 
     .post-access h2 {
+      font-family: "Alpino", serif;
       font-size: 22px;
       margin-bottom: 16px;
     }
@@ -109,9 +128,10 @@
 
     /* ===== Footer ===== */
     footer {
-      margin-top: 80px;
+      position: relative;
+      margin-top: 48px;
       font-size: 12px;
-      color: #5b6f8f;
+      color: #6b7f9d;
       letter-spacing: 0.05em;
     }
 
@@ -131,24 +151,18 @@
 
   <div class="container">
 
-    <!-- LOGO -->
     <img src="evai.svg" alt="EVAI" class="logo" />
 
-    <!-- TITLE -->
     <h1>Enterprise Vehicle Architecture Intelligence</h1>
 
-    <!-- TAGLINE -->
     <div class="tagline">
       Translation Layers · Phased Reveal · Active Alignment
     </div>
 
-    <!-- NDA POSTURE -->
     <div class="nda-posture">
-      This site reflects EVAI’s executive posture.  
       Structure, sequencing, and application are intentionally governed and disclosed under mutual NDA.
     </div>
 
-    <!-- ACCESS GATE -->
     <div class="gate" id="gate">
       <input
         type="password"
@@ -156,20 +170,12 @@
         placeholder="ACCESS CODE"
         aria-label="Access Code"
       />
-      <small>Authorized executive access</small>
     </div>
 
-    <!-- POST ACCESS CONTENT -->
     <div class="post-access" id="postAccess">
-      <h2>Executive Engagement Overview</h2>
-      <p>
-        <!-- Placeholder — we will finalize this next -->
-        Post-access content appears here. This section provides alignment context,
-        sequencing clarity, and engagement framing sufficient to confirm NDA readiness.
-      </p>
+      <!-- We will finalize this next -->
     </div>
 
-    <!-- FOOTER -->
     <footer>
       © 2025 EVAI ·
       <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
