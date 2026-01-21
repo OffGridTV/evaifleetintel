@@ -2,215 +2,105 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>EVAI — Enterprise Vehicle Architecture Intelligence</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EVAI — Access</title>
 
 <style>
-@font-face {
-  font-family: "Synonym";
-  src: url("fonts/Synonym-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "Synonym";
-  src: url("fonts/Synonym-Medium.otf") format("opentype");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Alpino";
-  src: url("fonts/Alpino-Medium.otf") format("opentype");
-}
+  @font-face {
+    font-family: "Synonym";
+    src: url("fonts/Synonym-Regular.otf") format("opentype");
+  }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; }
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #eef5fb;
+    font-family: "Synonym", sans-serif;
+    color: #0f2438;
+  }
 
-body {
-  background: #eef5fb;
-  color: #0f2438;
-  font-family: "Synonym", sans-serif;
-}
+  .access-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 60px;
+  }
 
-.page { height: 100%; position: relative; }
+  /* Header */
+  .context-header {
+    font-size: 16px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
 
-/* =========================
-   LANDING — LOCKED
-   ========================= */
-.landing {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: opacity 0.6s ease;
-}
+  /* Logo */
+  .access-logo {
+    width: 260px;
+    margin-bottom: 28px;
+  }
 
-.evai-logo { width: 300px; margin-bottom: 18px; }
+  /* Funnel text */
+  .column-text {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 1200px;
+  }
 
-h1 {
-  font-family: "Alpino", serif;
-  font-size: 31px;
-  margin-bottom: 6px;
-}
+  /* Spacer to push NDA/footer down */
+  .spacer {
+    flex: 1.4;
+  }
 
-.tagline {
-  font-size: 15px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  font-weight: 500;
-}
+  /* NDA + email */
+  .bottom {
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
 
-.access-input {
-  padding: 14px 18px;
-  font-size: 14px;
-  border: 1px solid #7fa6c9;
-  border-radius: 6px;
-  background: transparent;
-  text-align: center;
-  width: 260px;
-}
-
-/* =========================
-   ACCESS — SINGLE COLUMN
-   ========================= */
-.access {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.8s ease;
-}
-
-.access.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.access-content {
-  height: 100vh;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 40px 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly; /* ← this is the key */
-  text-align: center;
-}
-
-.context-header {
-  font-size: 18px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  margin-bottom: 14px; 
-}
-
-.access-logo {
-  width: 260px;
-}
-
-.mission {
-  font-size: 17px;
-  line-height: 1.55;
-  max-width: 100vw;
-  white-space: nowrap;
-  margin: 22px 0;
-}
-
-/* body column */
-.column-text {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  font-size: 17px;
-  line-height: 1.55;
-  max-width: 900px;
-}
-
-/* NDA + email */
-.bottom {
-  font-size: 14px;
-  opacity: 0.75;
-}
-
-footer {
-  position: absolute;
-  bottom: 12px;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  opacity: 0.7;
-}
-
+  footer {
+    font-size: 12px;
+    opacity: 0.7;
+  }
 </style>
 </head>
 
 <body>
-<div class="page">
 
-<!-- LANDING -->
-<div class="landing" id="landing">
-  <img src="evai.svg" alt="EVAI" class="evai-logo" />
-  <h1>Enterprise Vehicle Architecture Intelligence</h1>
-  <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
-  <input type="password" class="access-input" id="codeInput"
-    placeholder="ACCESS CODE"
-    onkeydown="if(event.key==='Enter') unlock()" />
-</div>
+<div class="access-content">
 
-<!-- ACCESS -->
-<div class="access" id="access">
-  <div class="access-content">
+  <div class="context-header">UPS Active Alignment Window</div>
 
-    <div class="context-header">UPS Active Alignment Window</div>
+  <img src="evai.svg" alt="EVAI" class="access-logo" />
 
-    <img src="evai.svg" class="access-logo" />
+  <div class="column-text">
+    <div>UPS Industrial Engineering is legendary for data sets delivering consistency and protection at scale</div>
+    <div>EVAI observes vehicle systems in motion; complementary, independent and transparent</div>
+    <div>Dynamic, route-focused, curbside context</div>
+    <div>Clarity at executive pace and discretion</div>
+    <div>EVAI observes and translates</div>
+    <div>UPS decides.</div>
+  </div>
 
-    <div class="mission">
-      EVAI performs disciplined observations of vehicle systems in motion; the translation layer between dynamic operation and linear metrics.
-    </div>
+  <div class="spacer"></div>
 
- <div class="column-text">
-  <div>UPS Industrial Engineering is legendary for data sets delivering consistency and protection at scale</div>
-  <div>EVAI observes vehicle systems in motion; complementary, independent and transparent</div>
-  <div>Dynamic, route-focused, curbside context</div>
-  <div>Clarity at executive pace and discretion</div>
-  <div>EVAI observes and translates</div>
-  <div>UPS decides.</div>
-</div>
+  <div class="bottom">
+    Methodologies and sequencing are disclosed solely under mutual NDA.<br />
+    oem@EVAIFleetIntel.com
+  </div>
 
-<div class="spacer"></div>
-
-<div class="bottom">
-  Methodologies and sequencing are disclosed solely under mutual NDA.<br />
-  oem@EVAIFleetIntel.com
-</div>
+  <footer>
+    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
+  </footer>
 
 </div>
 
-<footer>
-© 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
-</footer>
-
-</div>
-
-<script>
-function unlock() {
-  if (document.getElementById("codeInput").value === "NOF9310") {
-    document.getElementById("landing").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("access").classList.add("active");
-    }, 600);
-  }
-}
-</script>
 </body>
 </html>
-
-
-
-
-
-
-
