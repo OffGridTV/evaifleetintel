@@ -32,7 +32,7 @@
     .page { min-height: 100%; position: relative; }
 
     /* =========================
-       LANDING (LOCKED)
+       LANDING (LOCKED – UNCHANGED)
        ========================= */
     .landing {
       height: 100vh;
@@ -71,7 +71,7 @@
     }
 
     /* =========================
-       MANTRA PAGE (FIXED)
+       ACCESS / MANTRA (FUNNEL)
        ========================= */
     .access {
       position: absolute;
@@ -86,61 +86,60 @@
     }
 
     .access-content {
-      min-height: calc(100vh - 70px);
-      max-width: 1200px;
+      height: 100vh;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 40px 60px 80px;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      gap: 40px;
-    }
-
-    /* Top */
-    .top {
+      padding: 50px 40px 90px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
       text-align: center;
     }
 
+    /* Headline */
     .context-header {
-      font-size: 13px;
-      letter-spacing: 0.14em;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      opacity: 0.85;
-      margin-bottom: 18px;
+      color: #0b1f33;
+      margin-bottom: 28px;
     }
 
-    .access-logo { width: 240px; margin-bottom: 18px; }
+    .access-logo {
+      width: 260px;
+      margin-bottom: 26px;
+    }
 
     .mission {
-      font-size: 15px;
-      line-height: 1.5;
-      max-width: 700px;
-      margin: 0 auto;
+      font-size: 15.5px;
+      line-height: 1.6;
+      max-width: 720px;
       opacity: 0.85;
+      margin-bottom: 48px;
     }
 
-    /* Middle – TWO COLUMNS */
-    .mantra-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 80px;
-      row-gap: 14px;
-      font-size: 16.5px;
+    /* Funnel stack */
+    .funnel {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      font-size: 17px;
       font-weight: 500;
       line-height: 1.55;
     }
 
-    .mantra-left,
-    .mantra-right {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .funnel .final {
+      font-weight: 700;
+      margin-top: 8px;
     }
 
-    /* Bottom */
+    /* NDA + contact */
     .bottom {
-      text-align: center;
       font-size: 14px;
       opacity: 0.8;
+      margin-top: 40px;
     }
 
     footer {
@@ -167,11 +166,11 @@
       onkeydown="if(event.key==='Enter') unlock()" />
   </div>
 
-  <!-- MANTRA -->
+  <!-- ACCESS / MANTRA -->
   <div class="access" id="access">
     <div class="access-content">
 
-      <div class="top">
+      <div>
         <div class="context-header">UPS / EVAI Active Alignment Window</div>
         <img src="evai.svg" class="access-logo" />
         <div class="mission">
@@ -180,22 +179,18 @@
         </div>
       </div>
 
-      <div class="mantra-grid">
-        <div class="mantra-left">
-          <div>UPS Industrial Engineering is legendary</div>
-          <div>Linear metrics delivering consistency and protection at scale</div>
-          <div>The Network of the Future</div>
-          <div>Independent and transparent by design</div>
-          <div>Dynamic, route-focused observations</div>
-        </div>
-        <div class="mantra-right">
-          <div>EVAI is complementary</div>
-          <div>Curbside context</div>
-          <div>Advanced analytics from inception</div>
-          <div>Clarity at executive pace and discretion</div>
-          <div>EVAI observes and translates</div>
-          <div><strong>UPS decides.</strong></div>
-        </div>
+      <div class="funnel">
+        <div>UPS Industrial Engineering is legendary</div>
+        <div>Linear metrics delivering consistency and protection at scale</div>
+        <div>The Network of the Future</div>
+        <div>Independent and transparent by design</div>
+        <div>Dynamic, route-focused observations</div>
+        <div>EVAI is complementary</div>
+        <div>Curbside context</div>
+        <div>Advanced analytics from inception</div>
+        <div>Clarity at executive pace and discretion</div>
+        <div>EVAI observes and translates</div>
+        <div class="final">UPS decides.</div>
       </div>
 
       <div class="bottom">
