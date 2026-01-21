@@ -96,7 +96,7 @@
     }
 
     /* =========================
-       MANTRA PAGE
+       MANTRA PAGE – FULL HEIGHT
        ========================= */
     .access {
       position: absolute;
@@ -113,13 +113,21 @@
 
     .access-content {
       height: 100%;
-      max-width: 760px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 60px 24px 70px;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-rows: 1fr 2fr 1fr;
+      text-align: center;
+    }
+
+    /* Top zone */
+    .top-zone {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      text-align: center;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
     }
 
     .context-header {
@@ -130,35 +138,35 @@
     }
 
     .access-logo {
-      width: 220px;
-      margin: 24px auto 18px;
+      width: 240px;
     }
 
     .mission {
       font-size: 15px;
       line-height: 1.5;
       opacity: 0.85;
+      max-width: 640px;
     }
 
-    .mantra {
+    /* Middle zone */
+    .middle-zone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
       font-size: 16.5px;
-      line-height: 1.6;
       font-weight: 500;
+      line-height: 1.6;
     }
 
-    .mantra p {
-      margin: 8px 0;
-    }
-
-    .nda-note {
+    /* Bottom zone */
+    .bottom-zone {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 14px;
       font-size: 14px;
-      opacity: 0.75;
-      margin-bottom: 10px;
-    }
-
-    .nda-rail {
-      font-size: 14px;
-      opacity: 0.85;
+      opacity: 0.8;
     }
 
     footer {
@@ -207,7 +215,8 @@
     <div class="access" id="access">
       <div class="access-content">
 
-        <div>
+        <!-- TOP -->
+        <div class="top-zone">
           <div class="context-header">UPS / EVAI Active Alignment Window</div>
           <img src="evai.svg" alt="EVAI" class="access-logo" />
           <div class="mission">
@@ -216,27 +225,25 @@
           </div>
         </div>
 
-        <div class="mantra">
-          <p>UPS Industrial Engineering is legendary</p>
-          <p>Linear metrics delivering consistency and protection at scale</p>
-          <p>The Network of the Future</p>
-          <p>EVAI is complementary</p>
-          <p>Independent and transparent by design</p>
-          <p>Dynamic, route-focused observations</p>
-          <p>Curbside context</p>
-          <p>Advanced analytics from inception</p>
-          <p>Clarity at executive pace and discretion</p>
-          <p>EVAI observes and translates</p>
-          <p>UPS decides.</p>
+        <!-- MIDDLE -->
+        <div class="middle-zone">
+          <div>UPS Industrial Engineering is legendary</div>
+          <div>Linear metrics delivering consistency and protection at scale</div>
+          <div>The Network of the Future</div>
+          <div>EVAI is complementary</div>
+          <div>Independent and transparent by design</div>
+          <div>Dynamic, route-focused observations</div>
+          <div>Curbside context</div>
+          <div>Advanced analytics from inception</div>
+          <div>Clarity at executive pace and discretion</div>
+          <div>EVAI observes and translates</div>
+          <div>UPS decides.</div>
         </div>
 
-        <div>
-          <div class="nda-note">
-            Methodologies and sequencing are disclosed solely under mutual NDA.
-          </div>
-          <div class="nda-rail">
-            oem@EVAIFleetIntel.com
-          </div>
+        <!-- BOTTOM -->
+        <div class="bottom-zone">
+          <div>Methodologies and sequencing are disclosed solely under mutual NDA.</div>
+          <div>oem@EVAIFleetIntel.com</div>
         </div>
 
       </div>
