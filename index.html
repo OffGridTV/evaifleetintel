@@ -5,9 +5,6 @@
   <title>EVAI — Enterprise Vehicle Architecture Intelligence</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- =========================
-       FONTS
-       ========================= -->
   <style>
     @font-face {
       font-family: "Synonym";
@@ -27,9 +24,6 @@
       font-weight: 500;
     }
 
-    /* =========================
-       BASE
-       ========================= */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -44,13 +38,9 @@
       background: #eef5fb;
       color: #0f2438;
       font-family: "Synonym", sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     .page {
-      width: 100%;
       height: 100%;
       position: relative;
     }
@@ -69,8 +59,8 @@
     }
 
     .evai-logo {
-      width: 320px;
-      margin-bottom: 20px;
+      width: 300px;
+      margin-bottom: 18px;
     }
 
     h1 {
@@ -91,7 +81,6 @@
       font-size: 15px;
       font-weight: 500;
       white-space: nowrap;
-      letter-spacing: 0.02em;
       margin-bottom: 28px;
       opacity: 0.9;
     }
@@ -112,9 +101,6 @@
     .access {
       position: absolute;
       inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.8s ease;
@@ -126,47 +112,48 @@
     }
 
     .access-content {
-      max-width: 720px;
-      width: 100%;
+      height: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-align: center;
-      padding: 0 24px;
     }
 
     .context-header {
       font-size: 13px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      margin-bottom: 18px;
       opacity: 0.85;
     }
 
     .access-logo {
-      width: 210px;
-      margin-bottom: 18px;
+      width: 220px;
+      margin: 24px auto 18px;
     }
 
     .mission {
-      font-size: 14.5px;
-      line-height: 1.55;
-      margin-bottom: 26px;
+      font-size: 15px;
+      line-height: 1.5;
       opacity: 0.85;
     }
 
     .mantra {
       font-size: 16.5px;
-      line-height: 1.65;
+      line-height: 1.6;
       font-weight: 500;
-      margin-bottom: 22px;
     }
 
     .mantra p {
-      margin-bottom: 10px;
+      margin: 8px 0;
     }
 
     .nda-note {
-      font-size: 13.5px;
-      margin-bottom: 26px;
+      font-size: 14px;
       opacity: 0.75;
+      margin-bottom: 10px;
     }
 
     .nda-rail {
@@ -174,15 +161,6 @@
       opacity: 0.85;
     }
 
-    .nda-rail span {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-
-    /* =========================
-       FOOTER
-       ========================= */
     footer {
       position: absolute;
       bottom: 12px;
@@ -229,19 +207,15 @@
     <div class="access" id="access">
       <div class="access-content">
 
-        <div class="context-header">
-          UPS / EVAI Active Alignment Window
+        <div>
+          <div class="context-header">UPS / EVAI Active Alignment Window</div>
+          <img src="evai.svg" alt="EVAI" class="access-logo" />
+          <div class="mission">
+            EVAI performs disciplined observation of vehicle systems in motion;
+            the translation layer between dynamic operation and linear metrics.
+          </div>
         </div>
 
-        <img src="evai.svg" alt="EVAI" class="access-logo" />
-
-        <!-- Intro sentence ABOVE mantra -->
-        <div class="mission">
-          EVAI performs disciplined observation of vehicle systems in motion;
-          the translation layer between dynamic operation and linear metrics.
-        </div>
-
-        <!-- Mantra -->
         <div class="mantra">
           <p>UPS Industrial Engineering is legendary</p>
           <p>Linear metrics delivering consistency and protection at scale</p>
@@ -256,14 +230,13 @@
           <p>UPS decides.</p>
         </div>
 
-        <!-- Methodology sentence BELOW mantra -->
-        <div class="nda-note">
-          Methodologies and sequencing are disclosed solely under mutual NDA.
-        </div>
-
-        <div class="nda-rail">
-          <span>To request NDA access</span>
-          oem@EVAIFleetIntel.com
+        <div>
+          <div class="nda-note">
+            Methodologies and sequencing are disclosed solely under mutual NDA.
+          </div>
+          <div class="nda-rail">
+            oem@EVAIFleetIntel.com
+          </div>
         </div>
 
       </div>
@@ -271,15 +244,12 @@
 
     <footer>
       © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
-      <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a> ·
-      <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
+      <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
+      <a href="https://evai.us" target="_blank">evai.us</a>
     </footer>
 
   </div>
 
-  <!-- =========================
-       SCRIPT
-       ========================= -->
   <script>
     function unlock() {
       const code = document.getElementById("codeInput").value;
