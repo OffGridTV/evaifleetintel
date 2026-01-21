@@ -9,30 +9,19 @@
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Regular.otf") format("opentype");
-      font-weight: 400;
     }
-
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Medium.otf") format("opentype");
       font-weight: 500;
     }
-
     @font-face {
       font-family: "Alpino";
       src: url("fonts/Alpino-Medium.otf") format("opentype");
-      font-weight: 500;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html, body {
-      height: 100%;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
 
     body {
       background: #eef5fb;
@@ -40,16 +29,13 @@
       font-family: "Synonym", sans-serif;
     }
 
-    .page {
-      height: 100%;
-      position: relative;
-    }
+    .page { min-height: 100%; position: relative; }
 
     /* =========================
        LANDING (LOCKED)
        ========================= */
     .landing {
-      height: 100%;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -58,10 +44,7 @@
       transition: opacity 0.6s ease;
     }
 
-    .evai-logo {
-      width: 300px;
-      margin-bottom: 18px;
-    }
+    .evai-logo { width: 300px; margin-bottom: 18px; }
 
     h1 {
       font-family: "Alpino", serif;
@@ -80,7 +63,6 @@
     .nda-line {
       font-size: 15px;
       font-weight: 500;
-      white-space: nowrap;
       margin-bottom: 28px;
       opacity: 0.9;
     }
@@ -96,7 +78,7 @@
     }
 
     /* =========================
-       MANTRA PAGE – FULL HEIGHT
+       MANTRA PAGE (FIXED)
        ========================= */
     .access {
       position: absolute;
@@ -105,29 +87,24 @@
       pointer-events: none;
       transition: opacity 0.8s ease;
     }
-
     .access.active {
       opacity: 1;
       pointer-events: auto;
     }
 
     .access-content {
-      height: 100%;
-      max-width: 900px;
+      min-height: calc(100vh - 70px);
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px;
+      padding: 40px 60px 80px;
       display: grid;
-      grid-template-rows: 1fr 2fr 1fr;
-      text-align: center;
+      grid-template-rows: auto 1fr auto;
+      gap: 40px;
     }
 
-    /* Top zone */
-    .top-zone {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 16px;
+    /* Top */
+    .top {
+      text-align: center;
     }
 
     .context-header {
@@ -135,36 +112,40 @@
       letter-spacing: 0.14em;
       text-transform: uppercase;
       opacity: 0.85;
+      margin-bottom: 18px;
     }
 
-    .access-logo {
-      width: 240px;
-    }
+    .access-logo { width: 240px; margin-bottom: 18px; }
 
     .mission {
       font-size: 15px;
       line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto;
       opacity: 0.85;
-      max-width: 640px;
     }
 
-    /* Middle zone */
-    .middle-zone {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 12px;
+    /* Middle – TWO COLUMNS */
+    .mantra-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 80px;
+      row-gap: 14px;
       font-size: 16.5px;
       font-weight: 500;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
-    /* Bottom zone */
-    .bottom-zone {
+    .mantra-left,
+    .mantra-right {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       gap: 14px;
+    }
+
+    /* Bottom */
+    .bottom {
+      text-align: center;
       font-size: 14px;
       opacity: 0.8;
     }
@@ -177,97 +158,80 @@
       font-size: 12px;
       opacity: 0.7;
     }
-
-    footer a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 
 <body>
-  <div class="page">
+<div class="page">
 
-    <!-- LANDING -->
-    <div class="landing" id="landing">
-      <img src="evai.svg" alt="EVAI" class="evai-logo" />
-      <h1>Enterprise Vehicle Architecture Intelligence</h1>
-      <div class="tagline">
-        Translation Layers · Phased Reveal · Active Alignment
-      </div>
-      <div class="nda-line">
-        Structure, sequencing, and application are intentionally governed and disclosed under mutual NDA.
-      </div>
-      <input
-        type="password"
-        class="access-input"
-        id="codeInput"
-        placeholder="ACCESS CODE"
-        onkeydown="if(event.key==='Enter') unlock()"
-      />
+  <!-- LANDING -->
+  <div class="landing" id="landing">
+    <img src="evai.svg" alt="EVAI" class="evai-logo" />
+    <h1>Enterprise Vehicle Architecture Intelligence</h1>
+    <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
+    <div class="nda-line">
+      Structure, sequencing, and application are intentionally governed and disclosed under mutual NDA.
     </div>
+    <input type="password" class="access-input" id="codeInput"
+      placeholder="ACCESS CODE"
+      onkeydown="if(event.key==='Enter') unlock()" />
+  </div>
 
-    <!-- MANTRA PAGE -->
-    <div class="access" id="access">
-      <div class="access-content">
+  <!-- MANTRA -->
+  <div class="access" id="access">
+    <div class="access-content">
 
-        <!-- TOP -->
-        <div class="top-zone">
-          <div class="context-header">UPS / EVAI Active Alignment Window</div>
-          <img src="evai.svg" alt="EVAI" class="access-logo" />
-          <div class="mission">
-            EVAI performs disciplined observation of vehicle systems in motion;
-            the translation layer between dynamic operation and linear metrics.
-          </div>
+      <div class="top">
+        <div class="context-header">UPS / EVAI Active Alignment Window</div>
+        <img src="evai.svg" class="access-logo" />
+        <div class="mission">
+          EVAI performs disciplined observation of vehicle systems in motion;
+          the translation layer between dynamic operation and linear metrics.
         </div>
+      </div>
 
-        <!-- MIDDLE -->
-        <div class="middle-zone">
+      <div class="mantra-grid">
+        <div class="mantra-left">
           <div>UPS Industrial Engineering is legendary</div>
           <div>Linear metrics delivering consistency and protection at scale</div>
           <div>The Network of the Future</div>
-          <div>EVAI is complementary</div>
           <div>Independent and transparent by design</div>
           <div>Dynamic, route-focused observations</div>
+        </div>
+        <div class="mantra-right">
+          <div>EVAI is complementary</div>
           <div>Curbside context</div>
           <div>Advanced analytics from inception</div>
           <div>Clarity at executive pace and discretion</div>
           <div>EVAI observes and translates</div>
-          <div>UPS decides.</div>
+          <div><strong>UPS decides.</strong></div>
         </div>
-
-        <!-- BOTTOM -->
-        <div class="bottom-zone">
-          <div>Methodologies and sequencing are disclosed solely under mutual NDA.</div>
-          <div>oem@EVAIFleetIntel.com</div>
-        </div>
-
       </div>
+
+      <div class="bottom">
+        Methodologies and sequencing are disclosed solely under mutual NDA.<br />
+        oem@EVAIFleetIntel.com
+      </div>
+
     </div>
-
-    <footer>
-      © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
-      <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
-      <a href="https://evai.us" target="_blank">evai.us</a>
-    </footer>
-
   </div>
 
-  <script>
-    function unlock() {
-      const code = document.getElementById("codeInput").value;
-      if (code === "NOF9310") {
-        document.getElementById("landing").style.opacity = "0";
-        setTimeout(() => {
-          document.getElementById("landing").style.display = "none";
-          document.getElementById("access").classList.add("active");
-        }, 600);
-      }
-    }
-  </script>
+  <footer>
+    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
+  </footer>
+
+</div>
+
+<script>
+function unlock() {
+  if (document.getElementById("codeInput").value === "NOF9310") {
+    document.getElementById("landing").style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById("landing").style.display = "none";
+      document.getElementById("access").classList.add("active");
+    }, 600);
+  }
+}
+</script>
 </body>
 </html>
