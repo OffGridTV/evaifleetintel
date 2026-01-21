@@ -1,222 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>EVAI — Enterprise Vehicle Architecture Intelligence</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    @font-face {
-      font-family: "Synonym";
-      src: url("fonts/Synonym-Regular.otf") format("opentype");
-    }
-    @font-face {
-      font-family: "Synonym";
-      src: url("fonts/Synonym-Medium.otf") format("opentype");
-      font-weight: 500;
-    }
-    @font-face {
-      font-family: "Alpino";
-      src: url("fonts/Alpino-Medium.otf") format("opentype");
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
-
-    body {
-      background: #eef5fb;
-      color: #0f2438;
-      font-family: "Synonym", sans-serif;
-    }
-
-    .page { min-height: 100%; position: relative; }
-
-    /* =========================
-       LANDING (LOCKED – UNCHANGED)
-       ========================= */
-    .landing {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      transition: opacity 0.6s ease;
-    }
-
-    .evai-logo { width: 300px; margin-bottom: 18px; }
-
-    h1 {
-      font-family: "Alpino", serif;
-      font-size: 31px;
-      margin-bottom: 6px;
-    }
-
-    .tagline {
-      font-size: 15px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-      font-weight: 500;
-    }
-
-    .access-input {
-      padding: 14px 18px;
-      font-size: 14px;
-      border: 1px solid #7fa6c9;
-      border-radius: 6px;
-      background: transparent;
-      text-align: center;
-      width: 260px;
-    }
-
-    /* =========================
-       ACCESS / MANTRA (FUNNEL)
-       ========================= */
-    .access {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s ease;
-    }
-    .access.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .access-content {
-      height: 100vh;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 50px 40px 90px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-    }
-
-    /* Headline */
-    .context-header {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #0b1f33;
-      margin-bottom: 28px;
-    }
-
-    .access-logo {
-      width: 260px;
-      margin-bottom: 26px;
-    }
-
-    .mission {
-      font-size: 15.5px;
-      line-height: 1.6;
-      max-width: 720px;
-      opacity: 0.85;
-      margin-bottom: 48px;
-    }
-
-    /* Funnel stack */
-    .funnel {
-      display: flex;
-      flex-direction: column;
-      gap: 26px;
-      font-size: 17px;
-      font-weight: 500;
-      line-height: 1.55;
-    }
-
-    .funnel .final {
-      font-weight: 700;
-      margin-top: 8px;
-    }
-
-    /* NDA + contact */
-    .bottom {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-top: 40px;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 12px;
-      width: 100%;
-      text-align: center;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-  </style>
-</head>
-
-<body>
-<div class="page">
-
-  <!-- LANDING -->
-  <div class="landing" id="landing">
-    <img src="evai.svg" alt="EVAI" class="evai-logo" />
-    <h1>Enterprise Vehicle Architecture Intelligence</h1>
-    <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
-    <input type="password" class="access-input" id="codeInput"
-      placeholder="ACCESS CODE"
-      onkeydown="if(event.key==='Enter') unlock()" />
-  </div>
-
-  <!-- ACCESS / MANTRA -->
-  <div class="access" id="access">
-    <div class="access-content">
-
-      <div>
-        <div class="context-header">UPS / EVAI Active Alignment Window</div>
-        <img src="evai.svg" class="access-logo" />
-        <div class="mission">
-          EVAI performs disciplined observation of vehicle systems in motion;
-          the translation layer between dynamic operation and linear metrics.
-        </div>
-      </div>
-
-      <div class="funnel">
-        <div>UPS Industrial Engineering is legendary</div>
-        <div>Linear metrics delivering consistency and protection at scale</div>
-        <div>The Network of the Future</div>
-        <div>Independent and transparent by design</div>
-        <div>Dynamic, route-focused observations</div>
-        <div>EVAI is complementary</div>
-        <div>Curbside context</div>
-        <div>Advanced analytics from inception</div>
-        <div>Clarity at executive pace and discretion</div>
-        <div>EVAI observes and translates</div>
-        <div class="final">UPS decides.</div>
-      </div>
-
-      <div class="bottom">
-        Methodologies and sequencing are disclosed solely under mutual NDA.<br />
-        oem@EVAIFleetIntel.com
-      </div>
-
-    </div>
-  </div>
-
-  <footer>
-    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
-  </footer>
-
-</div>
-
-<script>
-function unlock() {
-  if (document.getElementById("codeInput").value === "NOF9310") {
-    document.getElementById("landing").style.opacity = "0";
-    setTimeout(() => {
-      document.getElementById("landing").style.display = "none";
-      document.getElementById("access").classList.add("active");
-    }, 600);
-  }
+.access-content {
+  height: 100vh;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 40px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
 }
-</script>
-</body>
-</html>
+
+.context-header {
+  font-family: "Synonym", sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #0f2438;
+}
+
+.access-logo {
+  width: 260px;
+}
+
+.mission {
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 720px;
+  opacity: 0.85;
+}
+
+.column-text {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.bottom {
+  font-size: 14px;
+  opacity: 0.75;
+}
