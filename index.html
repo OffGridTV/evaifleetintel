@@ -88,7 +88,7 @@ h1 {
 
 .access-content {
   height: 100vh;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 40px 40px 80px;
   display: flex;
@@ -108,22 +108,25 @@ h1 {
   width: 260px;
 }
 
+/* mission line — SAME SIZE AS BODY, ONE LINE */
 .mission {
-  font-size: 15px;
-  line-height: 1.6;
-  max-width: 720px;
-  opacity: 0.85;
+  font-size: 17px;
+  line-height: 1.55;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
+/* body column */
 .column-text {
   display: flex;
   flex-direction: column;
   gap: 22px;
   font-size: 17px;
   line-height: 1.55;
-  max-width: 820px;
+  max-width: 900px;
 }
 
+/* NDA + email */
 .bottom {
   font-size: 14px;
   opacity: 0.75;
@@ -162,8 +165,7 @@ footer {
     <img src="evai.svg" class="access-logo" />
 
     <div class="mission">
-      EVAI performs disciplined observation of vehicle systems in motion;
-      the translation layer between dynamic operation and linear metrics.
+      EVAI performs disciplined observation of vehicle systems in motion; the translation layer between dynamic operation and linear metrics.
     </div>
 
     <div class="column-text">
@@ -176,7 +178,8 @@ footer {
     </div>
 
     <div class="bottom">
-      Methodologies and sequencing are disclosed solely under mutual NDA.
+      Methodologies and sequencing are disclosed solely under mutual NDA.<br />
+      oem@EVAIFleetIntel.com
     </div>
 
   </div>
