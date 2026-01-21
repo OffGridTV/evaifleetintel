@@ -56,7 +56,7 @@
     }
 
     /* =========================
-       LANDING
+       LANDING (LOCKED)
        ========================= */
     .landing {
       height: 100%;
@@ -69,7 +69,7 @@
     }
 
     .evai-logo {
-      width: 350px;
+      width: 320px;
       margin-bottom: 20px;
     }
 
@@ -107,7 +107,7 @@
     }
 
     /* =========================
-       ACCESS PAGE
+       MANTRA PAGE
        ========================= */
     .access {
       position: absolute;
@@ -142,18 +142,31 @@
 
     .access-logo {
       width: 210px;
-      margin-bottom: 28px;
+      margin-bottom: 18px;
+    }
+
+    .mission {
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 26px;
+      opacity: 0.85;
     }
 
     .mantra {
       font-size: 16.5px;
       line-height: 1.65;
       font-weight: 500;
-      margin-bottom: 36px;
+      margin-bottom: 22px;
     }
 
     .mantra p {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+    }
+
+    .nda-note {
+      font-size: 13.5px;
+      margin-bottom: 26px;
+      opacity: 0.75;
     }
 
     .nda-rail {
@@ -178,6 +191,15 @@
       font-size: 12px;
       opacity: 0.7;
     }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -187,17 +209,13 @@
     <!-- LANDING -->
     <div class="landing" id="landing">
       <img src="evai.svg" alt="EVAI" class="evai-logo" />
-
       <h1>Enterprise Vehicle Architecture Intelligence</h1>
-
       <div class="tagline">
         Translation Layers · Phased Reveal · Active Alignment
       </div>
-
       <div class="nda-line">
         Structure, sequencing, and application are intentionally governed and disclosed under mutual NDA.
       </div>
-
       <input
         type="password"
         class="access-input"
@@ -207,7 +225,7 @@
       />
     </div>
 
-    <!-- ACCESS PAGE -->
+    <!-- MANTRA PAGE -->
     <div class="access" id="access">
       <div class="access-content">
 
@@ -217,6 +235,13 @@
 
         <img src="evai.svg" alt="EVAI" class="access-logo" />
 
+        <!-- Intro sentence ABOVE mantra -->
+        <div class="mission">
+          EVAI performs disciplined observation of vehicle systems in motion;
+          the translation layer between dynamic operation and linear metrics.
+        </div>
+
+        <!-- Mantra -->
         <div class="mantra">
           <p>UPS Industrial Engineering is legendary</p>
           <p>Linear metrics delivering consistency and protection at scale</p>
@@ -231,6 +256,11 @@
           <p>UPS decides.</p>
         </div>
 
+        <!-- Methodology sentence BELOW mantra -->
+        <div class="nda-note">
+          Methodologies and sequencing are disclosed solely under mutual NDA.
+        </div>
+
         <div class="nda-rail">
           <span>To request NDA access</span>
           oem@EVAIFleetIntel.com
@@ -240,7 +270,9 @@
     </div>
 
     <footer>
-      © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
+      © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
+      <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a> ·
+      <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
     </footer>
 
   </div>
