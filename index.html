@@ -49,14 +49,19 @@ body {
 }
 
 .landing-logo {
-  width: 280px; /* SAME as bee page */
-  margin-bottom: 24px;
+  width: 280px; /* must match bee page */
+  margin-bottom: 26px;
 }
 
-.landing h1 {
+.landing-title {
   font-family: "Alpino", serif;
   font-size: 34px;
-  margin-bottom: 12px;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.landing-title div:first-child {
+  margin-bottom: 6px;
 }
 
 .tagline {
@@ -108,7 +113,7 @@ body {
 }
 
 .access-logo {
-  width: 280px; /* MATCHES landing */
+  width: 280px; /* identical to landing */
   margin-bottom: 38px;
 }
 
@@ -119,9 +124,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px;          /* one spacing rule */
+  gap: 22px;
   font-size: 17px;
-  line-height: 1.35; /* tight to avoid optical gaps */
+  line-height: 1.35;
   max-width: 1200px;
 }
 
@@ -144,8 +149,15 @@ footer {
 <div class="landing" id="landing">
   <div class="landing-inner">
     <img src="evai.svg" alt="EVAI" class="landing-logo" />
-    <h1>Enterprise Vehicle Architecture Intelligence</h1>
-    <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
+
+    <div class="landing-title">
+      <div>Enterprise Vehicle Architecture</div>
+      <div>Intelligence</div>
+    </div>
+
+    <div class="tagline">
+      Translation Layers · Phased Reveal · Active Alignment
+    </div>
 
     <input
       type="password"
