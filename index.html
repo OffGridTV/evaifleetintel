@@ -43,20 +43,20 @@ body {
 
 .landing-logo {
   width: 320px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .landing h1 {
   font-family: "Alpino", serif;
   font-size: 34px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .tagline {
   font-size: 16px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
   font-weight: 500;
 }
 
@@ -96,12 +96,12 @@ body {
   font-size: 17px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .access-logo {
   width: 280px;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
 }
 
 .intro-line {
@@ -109,47 +109,26 @@ body {
   line-height: 1.65;
   max-width: 1600px;
   white-space: nowrap;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
-.column-text {
+/* =========================
+   SINGLE SPACING SYSTEM
+   ========================= */
+.stack {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 22px; /* THE spacing rule */
   font-size: 17px;
   line-height: 1.65;
   max-width: 1200px;
 }
 
-/* precise vertical rhythm */
-.column-text div {
-  margin-bottom: 22px;
-}
-
-.column-text div:nth-last-child(2),
-.column-text div:last-child {
-  margin-bottom: 0;
-}
-
-.closing-block {
-  margin-top: 8px;
-}
-
-/* NDA + email spacing */
-.bottom {
-  font-size: 15px;
-  opacity: 0.8;
-  line-height: 1.6;
-  margin-top: 26px; /* closer to UPS decides */
-}
-
-.bottom div {
-  margin-top: 10px; /* equal spacing */
-}
-
 footer {
+  margin-top: 36px;
   font-size: 12px;
   opacity: 0.65;
-  margin-top: 34px;
 }
 </style>
 </head>
@@ -183,16 +162,13 @@ footer {
       EVAI performs disciplined observations of vehicle systems in motion; the translation layer between dynamic operation and linear metrics.
     </div>
 
-    <div class="column-text">
+    <div class="stack">
       <div>UPS Industrial Engineering is legendary for data sets delivering consistency and protection at scale</div>
       <div>EVAI observes vehicle systems in motion; complementary, independent and transparent</div>
       <div>Dynamic, route-focused, curbside context</div>
       <div>Clarity at executive pace and discretion</div>
       <div>EVAI observes and translates</div>
       <div>UPS decides.</div>
-    </div>
-
-    <div class="bottom">
       <div>Methodologies and sequencing are disclosed solely under mutual NDA.</div>
       <div>oem@EVAIFleetIntel.com</div>
     </div>
@@ -218,3 +194,4 @@ function unlock() {
 
 </body>
 </html>
+
