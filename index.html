@@ -29,46 +29,33 @@ body {
 }
 
 /* =========================
-   LANDING PAGE
+   LANDING PAGE (REVERTED)
    ========================= */
 .landing {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.landing-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  max-width: 520px;
-  width: 100%;
-  transform: translateY(-8px); /* optical centering */
 }
 
 .landing-logo {
-  width: 280px; /* must match bee page */
-  margin-bottom: 26px;
+  width: 280px; /* matches bee page */
+  margin-bottom: 20px;
 }
 
-.landing-title {
+.landing h1 {
   font-family: "Alpino", serif;
   font-size: 34px;
-  line-height: 1.25;
-  margin-bottom: 18px;
-}
-
-.landing-title div:first-child {
-  margin-bottom: 6px;
+  margin-bottom: 14px;
 }
 
 .tagline {
   font-size: 16px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 36px;
+  margin-bottom: 34px;
   font-weight: 500;
 }
 
@@ -79,12 +66,11 @@ body {
   border-radius: 6px;
   background: transparent;
   text-align: center;
-  width: 100%;
-  max-width: 320px;
+  width: 280px;
 }
 
 /* =========================
-   ACCESS (BEE) PAGE
+   ACCESS (BEE) PAGE — LOCKED
    ========================= */
 .access {
   display: none;
@@ -113,12 +99,12 @@ body {
 }
 
 .access-logo {
-  width: 280px; /* identical to landing */
+  width: 280px;
   margin-bottom: 38px;
 }
 
 /* =========================
-   SINGLE RHYTHM STACK
+   SINGLE RHYTHM STACK (LOCKED)
    ========================= */
 .stack {
   display: flex;
@@ -147,26 +133,17 @@ footer {
 
 <!-- LANDING PAGE -->
 <div class="landing" id="landing">
-  <div class="landing-inner">
-    <img src="evai.svg" alt="EVAI" class="landing-logo" />
+  <img src="evai.svg" alt="EVAI" class="landing-logo" />
+  <h1>Enterprise Vehicle Architecture Intelligence</h1>
+  <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
 
-    <div class="landing-title">
-      <div>Enterprise Vehicle Architecture</div>
-      <div>Intelligence</div>
-    </div>
-
-    <div class="tagline">
-      Translation Layers · Phased Reveal · Active Alignment
-    </div>
-
-    <input
-      type="password"
-      class="access-input"
-      id="codeInput"
-      placeholder="ACCESS CODE"
-      onkeydown="if(event.key==='Enter') unlock()"
-    />
-  </div>
+  <input
+    type="password"
+    class="access-input"
+    id="codeInput"
+    placeholder="ACCESS CODE"
+    onkeydown="if(event.key==='Enter') unlock()"
+  />
 </div>
 
 <!-- ACCESS PAGE -->
