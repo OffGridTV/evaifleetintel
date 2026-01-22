@@ -24,7 +24,7 @@
 body {
   height: 100vh;
   background: #eef5fb;
-  color: #0b1f33; /* darker */
+  color: #0b1f33;
   font-family: "Synonym", sans-serif;
 }
 
@@ -86,7 +86,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* true vertical centering */
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 0 60px;
@@ -96,32 +96,30 @@ body {
   font-size: 17px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 }
 
 .access-logo {
   width: 280px;
-  margin-bottom: 34px;
-}
-
-.intro-line {
-  font-size: 17px;
-  line-height: 1.65;
-  max-width: 1600px;
-  white-space: nowrap;
+  margin-bottom: 38px;
 }
 
 /* =========================
-   SINGLE SPACING SYSTEM
+   SINGLE RHYTHM STACK
    ========================= */
 .stack {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 22px; /* THE spacing rule */
+  gap: 22px;            /* ONE spacing rule */
   font-size: 17px;
-  line-height: 1.65;
+  line-height: 1.35;   /* tight to avoid optical gaps */
   max-width: 1200px;
+}
+
+.intro-line {
+  max-width: 1600px;
+  white-space: nowrap;
 }
 
 footer {
@@ -157,11 +155,10 @@ footer {
 
     <img src="evai.svg" alt="EVAI" class="access-logo" />
 
-    <div class="intro-line">
-      EVAI performs disciplined observations of vehicle systems in motion; the translation layer between dynamic operation and linear metrics.
-    </div>
-
     <div class="stack">
+      <div class="intro-line">
+        EVAI performs disciplined observations of vehicle systems in motion; the translation layer between dynamic operation and linear metrics.
+      </div>
       <div>UPS Industrial Engineering is legendary for data sets delivering consistency and protection at scale</div>
       <div>EVAI observes vehicle systems in motion; complementary, independent and transparent</div>
       <div>Dynamic, route-focused, curbside context</div>
@@ -193,5 +190,3 @@ function unlock() {
 
 </body>
 </html>
-
-
