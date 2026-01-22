@@ -24,7 +24,7 @@
 body {
   height: 100vh;
   background: #eef5fb;
-  color: #0f2438;
+  color: #0b1f33; /* darker */
   font-family: "Synonym", sans-serif;
 }
 
@@ -42,32 +42,32 @@ body {
 }
 
 .landing-logo {
-  width: 300px;
-  margin-bottom: 18px;
+  width: 320px;
+  margin-bottom: 20px;
 }
 
 .landing h1 {
   font-family: "Alpino", serif;
-  font-size: 31px;
-  margin-bottom: 6px;
+  font-size: 34px;
+  margin-bottom: 8px;
 }
 
 .tagline {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   font-weight: 500;
 }
 
 .access-input {
-  padding: 14px 18px;
-  font-size: 14px;
-  border: 1px solid #7fa6c9;
+  padding: 15px 20px;
+  font-size: 15px;
+  border: 1px solid #6f96bb;
   border-radius: 6px;
   background: transparent;
   text-align: center;
-  width: 260px;
+  width: 280px;
 }
 
 /* =========================
@@ -86,54 +86,70 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center; /* true vertical centering */
   align-items: center;
   text-align: center;
-  padding: 40px 60px;
+  padding: 0 60px;
 }
 
 .context-header {
-  font-size: 16px;
-  letter-spacing: 0.14em;
+  font-size: 17px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .access-logo {
-  width: 260px;
-  margin-bottom: 28px;
+  width: 280px;
+  margin-bottom: 30px;
 }
 
 .intro-line {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   max-width: 1600px;
   white-space: nowrap;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 }
 
 .column-text {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   max-width: 1200px;
 }
 
-.spacer {
-  flex: 1.4;
+/* precise vertical rhythm */
+.column-text div {
+  margin-bottom: 22px;
 }
 
+.column-text div:nth-last-child(2),
+.column-text div:last-child {
+  margin-bottom: 0;
+}
+
+.closing-block {
+  margin-top: 8px;
+}
+
+/* NDA + email spacing */
 .bottom {
-  font-size: 14px;
-  opacity: 0.75;
+  font-size: 15px;
+  opacity: 0.8;
   line-height: 1.6;
-  margin-bottom: 18px;
+  margin-top: 26px; /* closer to UPS decides */
+}
+
+.bottom div {
+  margin-top: 10px; /* equal spacing */
 }
 
 footer {
   font-size: 12px;
-  opacity: 0.7;
+  opacity: 0.65;
+  margin-top: 34px;
 }
 </style>
 </head>
@@ -176,11 +192,9 @@ footer {
       <div>UPS decides.</div>
     </div>
 
-    <div class="spacer"></div>
-
     <div class="bottom">
-      Methodologies and sequencing are disclosed solely under mutual NDA.<br />
-      oem@EVAIFleetIntel.com
+      <div>Methodologies and sequencing are disclosed solely under mutual NDA.</div>
+      <div>oem@EVAIFleetIntel.com</div>
     </div>
 
     <footer>
