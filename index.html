@@ -68,7 +68,7 @@ body {
 }
 
 /* =========================
-   ACCESS PAGE (NO SCROLL)
+   ACCESS PAGE (FINAL)
    ========================= */
 .access {
   display: none;
@@ -79,10 +79,14 @@ body {
 }
 
 .access-content {
+  min-height: 100vh;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 28px 60px 28px;
+  padding: 28px 60px 18px;
   text-align: center;
+
+  display: flex;
+  flex-direction: column;
 }
 
 /* HEADER */
@@ -90,20 +94,20 @@ body {
   font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 /* LOGO */
 .access-logo {
   width: 250px;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 /* STACK */
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   font-size: 16px;
   line-height: 1.32;
 }
@@ -113,9 +117,19 @@ body {
   margin: 0 auto;
 }
 
-/* FOOTER */
+/* POST-STINGER SPACING */
+.nda-line {
+  margin-top: 18px;
+}
+
+.contact-line {
+  margin-top: 10px;
+}
+
+/* FOOTER — PINNED */
 footer {
-  margin-top: 20px;
+  margin-top: auto;
+  padding-top: 16px;
   font-size: 11px;
   opacity: 0.65;
 }
@@ -125,12 +139,12 @@ footer {
    ========================= */
 @media (max-width: 768px) {
   .access-content {
-    padding: 22px 22px 24px;
+    padding: 22px 22px 16px;
   }
 
   .context-header {
     font-size: 13px;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .access-logo {
@@ -140,12 +154,12 @@ footer {
 
   .stack {
     font-size: 15px;
-    gap: 14px;
+    gap: 12px;
   }
 
   footer {
     font-size: 11px;
-    margin-top: 18px;
+    padding-top: 14px;
   }
 }
 </style>
@@ -186,8 +200,14 @@ footer {
       <div>Clarity at executive pace and discretion</div>
       <div>EVAI observes and translates</div>
       <div>UPS decides.</div>
-      <div>Methodologies and sequencing are disclosed solely under mutual NDA.</div>
-      <div>oem@EVAIFleetIntel.com</div>
+
+      <div class="nda-line">
+        Methodologies and sequencing are disclosed solely under mutual NDA.
+      </div>
+
+      <div class="contact-line">
+        oem@EVAIFleetIntel.com
+      </div>
     </div>
 
     <footer>
