@@ -34,11 +34,28 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 12px;
-  position: relative;
+}
+  .landing-center {
+  margin: auto;
+}
+
+.landing-footer {
+  margin-top: auto;
+  padding: 20px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0b1f33;
+}
+
+.landing-footer a {
+  color: #0b1f33;
+  text-decoration: none;
+}
+
+.landing-footer a:hover {
+  text-decoration: underline;
 }
 
 .landing-logo {
@@ -187,21 +204,27 @@ footer {
 
 <!-- LANDING -->
 <div class="landing" id="landing">
-  <img src="evai.svg" alt="EVAI" class="landing-logo" />
-  <h1>Enterprise Vehicle Architecture Intelligence</h1>
-  <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
 
-  <input
-    type="password"
-    class="access-input"
-    id="codeInput"
-    placeholder="ACCESS CODE"
-    onkeydown="if(event.key==='Enter') unlock()"
-  />
+  <div class="landing-center">
+    <img src="evai.svg" alt="EVAI" class="landing-logo" />
+    <h1>Enterprise Vehicle Architecture Intelligence</h1>
+    <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
+
+    <input
+      type="password"
+      class="access-input"
+      id="codeInput"
+      placeholder="ACCESS CODE"
+      onkeydown="if(event.key==='Enter') unlock()"
+    />
+  </div>
 
   <footer class="landing-footer">
-    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI)
+    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
+    <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
+    <a href="https://evai.us" target="_blank">evai.us</a>
   </footer>
+
 </div>
 
 <!-- ACCESS -->
@@ -251,3 +274,4 @@ function unlock() {
 
 </body>
 </html>
+
