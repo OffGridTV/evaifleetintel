@@ -22,158 +22,86 @@
 }
 
 body {
-  background: #e6f0fa;   /* slightly bluer */
+  background: #e6f0fa; /* slightly bluer */
   color: #0b1f33;
   font-family: "Synonym", sans-serif;
 }
 
-/* =========================
-   LANDING PAGE
-   ========================= */
+/* ================= LANDING ================= */
+
 .landing {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 60px 20px 40px;
 }
-  .landing-center {
-  margin: auto;
-}
-
-.landing-footer {
-  margin-top: auto;
-  padding: 20px 0;
-  font-size: 14px;
-  font-weight: 500;
-  color: #0b1f33;
-}
-
-.landing-footer a {
-  color: #0b1f33;
-  text-decoration: none;
-}
-
-.landing-footer a:hover {
-  text-decoration: underline;
-}
 
 .landing-logo {
-  width: 45vw;
-  max-width: 650px;
-  margin-bottom: -10px;
+  width: 48vw;
+  max-width: 720px;
+  margin-bottom: 8px; /* reduced gap */
 }
 
 .landing h1 {
   font-family: "Alpino", serif;
   font-size: 46px;
+  margin-bottom: 10px;
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 40px;
 }
 
+/* Access Box */
+
 .access-input {
-  padding: 14px 18px;
-  font-size: 15px;
-  border: 1px solid #6f96bb;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: 1px solid #5e87ad;
   border-radius: 6px;
   background: transparent;
   text-align: center;
-  width: 280px;
+  width: 300px;
   color: #0b1f33;
-  font-weight: 500;
+  font-weight: 500; /* darker look */
+  margin-bottom: 60px; /* equal spacing to footer */
 }
-  
-  .access-input::placeholder {
+
+.access-input::placeholder {
   color: #0b1f33;
-  opacity: 0.8;
+  opacity: 0.85;
 }
+
+/* Footer */
 
 footer {
-  margin-top: auto;
-  padding: 18px 0 24px;
-  font-size: 14px;
+  font-size: 14px; /* slightly bigger */
+  color: #0b1f33;  /* darker */
   font-weight: 500;
+}
+
+footer a {
   color: #0b1f33;
+  text-decoration: none;
+  margin: 0 4px;
 }
 
-/* =========================
-   ACCESS PAGE
-   ========================= */
-.access {
-  display: none;
+footer a:hover {
+  text-decoration: underline;
 }
 
-.access.active {
-  display: block;
-}
+/* ================= MOBILE ================= */
 
-.access-content {
-  min-height: 100vh;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 28px 60px 18px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* HEADER */
-.context-header {
-  font-size: 24px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-/* LOGO */
-.access-logo {
-  width: 480px;
-  margin-bottom: 12px;
-}
-
-/* STACK */
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 16px;
-  line-height: 1.32;
-}
-
-.intro-line {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.nda-line {
-  margin-top: 18px;
-}
-
-.contact-line {
-  margin-top: 10px;
-}
-
-footer {
-  margin-top: auto;
-  padding-top: 16px;
-  font-size: 12px;
-  opacity: 0.75;
-}
-
-/* =========================
-   MOBILE
-   ========================= */
 @media (max-width: 768px) {
 
   .landing-logo {
-    width: 70vw;
+    width: 75vw;
   }
 
   .landing h1 {
@@ -181,28 +109,15 @@ footer {
   }
 
   .tagline {
-    font-size: 14px;
+    font-size: 13px;
   }
 
-  .landing-footer {
+  .access-input {
+    width: 260px;
+  }
+
+  footer {
     font-size: 12px;
-    bottom: 20px;
-  }
-
-  .access-content {
-    padding: 22px 22px 16px;
-  }
-
-  .context-header {
-    font-size: 14px;
-  }
-
-  .access-logo {
-    width: 220px;
-  }
-
-  .stack {
-    font-size: 15px;
   }
 }
 </style>
@@ -210,15 +125,14 @@ footer {
 
 <body>
 
-<!-- LANDING -->
-<div class="landing" id="landing">
+<div class="landing">
 
-<div class="landing" id="landing">
+  <img src="evai.svg" alt="EVAI" class="landing-logo" />
 
-  <div class="landing-top">
-    <img src="evai.svg" alt="EVAI" class="landing-logo" />
-    <h1>Enterprise Vehicle Architecture Intelligence</h1>
-    <div class="tagline">Translation Layers · Phased Reveal · Active Alignment</div>
+  <h1>Enterprise Vehicle Architecture Intelligence</h1>
+
+  <div class="tagline">
+    Translation Layers · Phased Reveal · Active Alignment
   </div>
 
   <input
@@ -230,61 +144,20 @@ footer {
   />
 
   <footer>
-    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · 
-    <a href="https://fleetai.network" target="_blank">fleetai.network</a> · 
+    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
+    <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
     <a href="https://evai.us" target="_blank">evai.us</a>
   </footer>
 
 </div>
 
-<!-- ACCESS -->
-<div class="access" id="access">
-  <div class="access-content">
-
-    <div class="context-header">UPS Active Alignment Window</div>
-
-    <img src="evai.svg" alt="EVAI" class="access-logo" />
-
-    <div class="stack">
-      <div class="intro-line">
-        EVAI conducts disciplined observation of vehicle systems in motion, translating dynamic operations into linear clarity
-      </div>
-      <div>UPS Industrial Engineering is recognized for data systems that deliver consistency and protection at scale</div>
-      <div>EVAI operates as a complementary, independent and transparent layer by design</div>
-      <div>Providing route-level, curbside context</div>
-      <div>Clarity at executive pace and discretion</div>
-      <div>EVAI observes and translates</div>
-      <div>UPS decides.</div>
-
-      <div class="nda-line">
-        Methodologies and sequencing are disclosed solely under mutual NDA.
-      </div>
-
-      <div class="contact-line">
-        oem@EVAIFleetIntel.com
-      </div>
-    </div>
-
-    <footer>
-      © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) · fleetai.network · evai.us
-    </footer>
-
-  </div>
-</div>
-
 <script>
 function unlock() {
   if (document.getElementById("codeInput").value === "NOF9310") {
-    document.getElementById("landing").style.display = "none";
-    document.getElementById("access").classList.add("active");
-    window.scrollTo(0, 0);
+    window.location.href = "access.html";
   }
 }
 </script>
 
 </body>
 </html>
-
-
-
-
