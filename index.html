@@ -22,85 +22,86 @@
 }
 
 body {
-  background: #e6f0fa; /* slightly bluer */
+  background: #eaf2fb; /* slightly bluer */
   color: #0b1f33;
   font-family: "Synonym", sans-serif;
 }
 
-/* ================= LANDING ================= */
+/* =========================
+   LANDING PAGE
+   ========================= */
 
 .landing {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* keeps footer pinned */
   align-items: center;
-  justify-content: flex-start;
   text-align: center;
-  padding-top: 120px;
-  padding-bottom: 30px;
+  padding: 40px 20px 28px;
 }
 
+.landing-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LOGO */
 .landing-logo {
-  width: 48vw;
+  width: 50vw;
   max-width: 720px;
-  margin-bottom: 12px;
-}
-
-.landing h1 {
-  font-family: "Alpino", serif;
-  font-size: 46px;
   margin-bottom: 8px;
 }
 
+/* HEADLINE */
+.landing h1 {
+  font-family: "Alpino", serif;
+  font-size: 46px;
+  margin-bottom: 6px;
+}
+
+/* TAGLINE */
 .tagline {
   font-size: 17px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 40px;
+  margin-bottom: 26px;
 }
 
+/* ACCESS INPUT */
 .access-input {
-  padding: 14px 20px;
-  font-size: 16px;
-  border: 1px solid #5e87ad;
+  padding: 14px 18px;
+  font-size: 15px;
+  border: 1px solid #6f96bb;
   border-radius: 6px;
   background: transparent;
   text-align: center;
-  width: 300px;
-  color: #0b1f33;
-  font-weight: 500;
-  margin: 0;
+  width: 280px;
+  color: #0b1f33; /* darker text */
 }
 
-.access-input::placeholder {
-  color: #0b1f33;
-  opacity: 0.85;
-}
-
-/* Footer */
-
+/* FOOTER */
 footer {
-  font-size: 14px; /* slightly bigger */
-  color: #0b1f33;  /* darker */
-  font-weight: 500;
+  font-size: 14px;           /* slightly larger */
+  color: #0b1f33;            /* darker */
 }
 
 footer a {
   color: #0b1f33;
   text-decoration: none;
-  margin: 0 4px;
+  margin: 0 6px;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media (max-width: 768px) {
 
   .landing-logo {
-    width: 75vw;
+    width: 80vw;
   }
 
   .landing h1 {
@@ -108,15 +109,12 @@ footer a:hover {
   }
 
   .tagline {
-    font-size: 13px;
+    font-size: 14px;
+    margin-bottom: 22px;
   }
 
   .access-input {
-    width: 260px;
-  }
-
-  footer {
-    font-size: 12px;
+    width: 240px;
   }
 }
 </style>
@@ -126,21 +124,25 @@ footer a:hover {
 
 <div class="landing">
 
-  <img src="evai.svg" alt="EVAI" class="landing-logo" />
+  <div class="landing-main">
 
-  <h1>Enterprise Vehicle Architecture Intelligence</h1>
+    <img src="evai.svg" alt="EVAI" class="landing-logo" />
 
-  <div class="tagline">
-    Translation Layers · Phased Reveal · Active Alignment
+    <h1>Enterprise Vehicle Architecture Intelligence</h1>
+
+    <div class="tagline">
+      Translation Layers · Phased Reveal · Active Alignment
+    </div>
+
+    <input
+      type="password"
+      class="access-input"
+      id="codeInput"
+      placeholder="ACCESS CODE"
+      onkeydown="if(event.key==='Enter') unlock()"
+    />
+
   </div>
-
-  <input
-    type="password"
-    class="access-input"
-    id="codeInput"
-    placeholder="ACCESS CODE"
-    onkeydown="if(event.key==='Enter') unlock()"
-  />
 
   <footer>
     © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
@@ -160,5 +162,3 @@ function unlock() {
 
 </body>
 </html>
-
-
