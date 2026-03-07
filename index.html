@@ -21,53 +21,62 @@
   padding: 0;
 }
 
+html, body {
+  width: 100%;
+  min-height: 100%;
+}
+
 body {
-  background: #eaf2fb; /* slightly bluer */
+  background: #eaf2fb;
   color: #0b1f33;
   font-family: "Synonym", sans-serif;
 }
 
-/* =========================
-   LANDING PAGE
-   ========================= */
-
+/* LANDING PAGE */
 .landing {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* keeps footer pinned */
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 36px 20px 22px;
+  padding: 28px 18px 18px;
+  gap: 24px;
 }
 
 .landing-main {
+  width: 100%;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto 0;
 }
 
 /* LOGO */
 .landing-logo {
-  width: 55vw;
-  max-width: 600px;
-  margin-bottom: -100px;
+  width: min(78vw, 320px);
+  height: auto;
+  margin-bottom: 18px;
+  display: block;
 }
 
 /* HEADLINE */
 .landing h1 {
   font-family: "Alpino", serif;
-  font-size: 46px;
-  margin-top: 0px;
-  margin-bottom: 4px;
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.08;
+  margin-bottom: 14px;
+  max-width: 12ch;
 }
 
 /* TAGLINE */
 .tagline {
-  font-size: 17px;
-  letter-spacing: 0.18em;
+  font-size: clamp(13px, 2.8vw, 17px);
+  line-height: 1.5;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 /* ACCESS INPUT */
@@ -75,23 +84,32 @@ body {
   padding: 14px 18px;
   font-size: 15px;
   border: 1px solid #6f96bb;
-  border-radius: 6px;
+  border-radius: 10px;
   background: transparent;
   text-align: center;
-  width: 280px;
-  color: #0b1f33; /* darker text */
+  width: 100%;
+  max-width: 320px;
+  color: #0b1f33;
+  outline: none;
+}
+
+.access-input::placeholder {
+  color: #8a8f96;
+  letter-spacing: 0.04em;
 }
 
 /* FOOTER */
 footer {
-  font-size: 14px;           /* slightly larger */
-  color: #0b1f33;            /* darker */
+  font-size: 13px;
+  line-height: 1.5;
+  color: #0b1f33;
+  max-width: 500px;
 }
 
 footer a {
   color: #0b1f33;
   text-decoration: none;
-  margin: 0 6px;
+  margin: 0 4px;
 }
 
 footer a:hover {
@@ -100,22 +118,34 @@ footer a:hover {
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .landing {
+    padding: 24px 16px 16px;
+  }
 
   .landing-logo {
-    width: 80vw;
+    width: min(82vw, 300px);
+    margin-bottom: 14px;
   }
 
   .landing h1 {
-    font-size: 28px;
+    font-size: clamp(24px, 7vw, 32px);
+    max-width: 11ch;
+    margin-bottom: 12px;
   }
 
   .tagline {
-    font-size: 14px;
-    margin-bottom: 22px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
   }
 
   .access-input {
-    width: 240px;
+    max-width: 100%;
+  }
+
+  footer {
+    font-size: 12px;
+    padding-bottom: 4px;
   }
 }
 </style>
@@ -163,9 +193,3 @@ function unlock() {
 
 </body>
 </html>
-
-
-
-
-
-
