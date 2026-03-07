@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>EVAI</title>
 
   <style>
@@ -25,101 +22,97 @@
       --bg: #eaf2fb;
       --text: #0b1f33;
       --border: #7ea0c3;
-      --muted: #8d9299;
-      --content-max: 1400px;
+      --muted: #8f949b;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      min-width: 0;
     }
 
-    html {
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
       overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
-      min-height: 100vh;
       background: var(--bg);
       color: var(--text);
       font-family: "Synonym", sans-serif;
-      overflow-x: hidden;
     }
 
     .page {
       min-height: 100vh;
       width: 100%;
-      padding: 24px 16px 18px;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      align-items: center;
+      padding: 18px 16px 16px;
+      overflow-x: hidden;
     }
 
     .hero {
-      flex: 1;
       width: 100%;
-      max-width: var(--content-max);
+      max-width: 1400px;
+      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      gap: 18px;
     }
 
     .logo {
-      width: min(78vw, 520px);
-      height: auto;
       display: block;
-      margin-bottom: 10px;
+      width: min(70vw, 300px);
+      height: auto;
+      margin: 0 auto 14px;
     }
 
     h1 {
       font-family: "Alpino", serif;
       font-weight: 500;
-      font-size: clamp(2rem, 6vw, 4.6rem);
-      line-height: 1.05;
+      font-size: clamp(2rem, 8vw, 3rem);
+      line-height: 1.08;
       letter-spacing: -0.02em;
-      max-width: 16ch;
-      text-wrap: balance;
+      max-width: 11ch;
+      margin: 0 auto 14px;
+      white-space: normal;
+      overflow-wrap: anywhere;
     }
 
     .tagline {
-      font-size: clamp(0.95rem, 2.5vw, 1.55rem);
-      line-height: 1.45;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      max-width: 100%;
-      word-break: normal;
-    }
-
-    .access-wrap {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;
+      max-width: 340px;
+      margin: 0 auto 20px;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      white-space: normal;
     }
 
     .access-input {
-      width: min(100%, 420px);
-      height: 60px;
-      padding: 0 18px;
+      display: block;
+      width: min(100%, 340px);
+      height: 58px;
+      margin: 0 auto;
+      padding: 0 16px;
       border: 1.5px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       background: transparent;
       color: var(--text);
       text-align: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-family: "Synonym", sans-serif;
       outline: none;
-      appearance: none;
       -webkit-appearance: none;
+      appearance: none;
     }
 
     .access-input::placeholder {
@@ -129,16 +122,11 @@
 
     footer {
       width: 100%;
-      max-width: var(--content-max);
+      max-width: 340px;
+      margin: 18px auto 0;
       text-align: center;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--text);
-    }
-
-    footer .footer-line {
-      display: inline-block;
-      max-width: 100%;
+      font-size: 0.84rem;
+      line-height: 1.45;
     }
 
     footer a {
@@ -150,150 +138,84 @@
       text-decoration: underline;
     }
 
-    /* Tablet */
+    /* TABLET */
     @media (min-width: 768px) {
       .page {
-        padding: 34px 28px 24px;
-      }
-
-      .hero {
-        gap: 22px;
+        padding: 26px 24px 20px;
       }
 
       .logo {
-        width: min(50vw, 620px);
-        margin-bottom: 6px;
+        width: min(52vw, 420px);
+        margin-bottom: 16px;
       }
 
       h1 {
-        max-width: 20ch;
+        font-size: clamp(2.8rem, 5vw, 4.3rem);
+        max-width: 15ch;
+        margin-bottom: 16px;
       }
 
       .tagline {
-        letter-spacing: 0.18em;
+        max-width: 800px;
+        font-size: 1rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 24px;
       }
 
       .access-input {
-        width: min(100%, 460px);
-        height: 64px;
-        font-size: 1.1rem;
+        width: min(100%, 420px);
+        height: 60px;
+        font-size: 1.05rem;
+      }
+
+      footer {
+        max-width: 760px;
+        font-size: 0.95rem;
       }
     }
 
-    /* Laptop / desktop */
+    /* LAPTOP / DESKTOP */
     @media (min-width: 1024px) {
-
-  .hero {
-    gap: 12px;
-    margin-top: -30px;
-  }
-
-}
+      .page {
+        padding: 10px 40px 24px;
+      }
 
       .hero {
-        gap: 24px;
+        transform: translateY(-22px);
       }
 
       .logo {
-        width: min(38vw, 760px);
-        margin-bottom: 4px;
+        width: min(42vw, 520px);
+        margin-bottom: 8px;
       }
 
       h1 {
-        font-size: clamp(3.2rem, 4.1vw, 5.2rem);
+        font-size: clamp(3.3rem, 4.1vw, 5.4rem);
         max-width: none;
         white-space: nowrap;
+        margin-bottom: 18px;
       }
 
       .tagline {
-        font-size: clamp(1rem, 1.15vw, 1.3rem);
+        max-width: none;
         white-space: nowrap;
+        font-size: clamp(1rem, 1.1vw, 1.25rem);
+        letter-spacing: 0.18em;
+        margin-bottom: 28px;
       }
 
       .access-input {
-        width: 440px;
+        width: 540px;
+        height: 64px;
+        font-size: 1.08rem;
+        border-radius: 18px;
       }
 
-      footer .footer-line {
+      footer {
+        max-width: none;
         white-space: nowrap;
+        font-size: 0.95rem;
       }
-    }
-
-    /* Smaller phones */
-    /* =========================
-   PHONE FIX
-   ========================= */
-@media (max-width: 767px) {
-
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-
-  .page {
-    padding: 20px 14px 16px;
-  }
-
-  .hero {
-    width: 100%;
-    gap: 12px;
-    padding: 0;
-  }
-
-  .logo {
-    width: 62vw;
-    max-width: 260px;
-    margin-bottom: 0;
-  }
-
-  .landing-logo {
-    width: 62vw;
-    max-width: 260px;
-    margin-bottom: 0;
-  }
-
-  h1,
-  .landing h1 {
-    font-size: clamp(28px, 7.2vw, 40px);
-    line-height: 1.08;
-    max-width: 11ch;
-    white-space: normal !important;
-    text-wrap: balance;
-    overflow-wrap: break-word;
-    word-break: normal;
-    margin: 0 auto 8px;
-  }
-
-  .tagline {
-    font-size: 13px;
-    line-height: 1.45;
-    letter-spacing: 0.10em;
-    white-space: normal !important;
-    max-width: 92vw;
-    margin: 0 auto 14px;
-  }
-
-  .access-wrap {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .access-input {
-    width: 100%;
-    max-width: 340px;
-    height: 58px;
-    font-size: 16px;
-    border-radius: 14px;
-  }
-
-  footer,
-  footer .footer-line {
-    white-space: normal !important;
-    max-width: 92vw;
-    margin: 0 auto;
-    line-height: 1.45;
-  }
     }
   </style>
 </head>
@@ -309,36 +231,29 @@
         Translation Layers · Phased Reveal · Active Alignment
       </div>
 
-      <div class="access-wrap">
-        <input
-          type="password"
-          class="access-input"
-          id="codeInput"
-          placeholder="ACCESS CODE"
-          onkeydown="if(event.key === 'Enter') unlock()"
-        />
-      </div>
+      <input
+        type="password"
+        class="access-input"
+        id="codeInput"
+        placeholder="ACCESS CODE"
+        onkeydown="if(event.key === 'Enter') unlock()"
+      />
     </main>
 
     <footer>
-      <span class="footer-line">
-        © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
-        <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a>
-        ·
-        <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
-      </span>
+      © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
+      <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a>
+      ·
+      <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
     </footer>
   </div>
 
   <script>
     function unlock() {
-      const input = document.getElementById("codeInput");
-      if (input.value === "NOF9310") {
+      if (document.getElementById("codeInput").value === "NOF9310") {
         window.location.href = "access.html";
       }
     }
   </script>
 </body>
 </html>
-
-
