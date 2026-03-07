@@ -220,39 +220,80 @@
     }
 
     /* Smaller phones */
-    @media (max-width: 480px) {
-      .page {
-        padding: 20px 14px 16px;
-      }
+    /* =========================
+   PHONE FIX
+   ========================= */
+@media (max-width: 767px) {
 
-      .hero {
-        gap: 16px;
-      }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 
-      .logo {
-        width: min(84vw, 420px);
-      }
+  .page {
+    padding: 20px 14px 16px;
+  }
 
-      h1 {
-        font-size: clamp(1.9rem, 8vw, 2.5rem);
-        max-width: 12ch;
-      }
+  .hero {
+    width: 100%;
+    gap: 12px;
+    padding: 0;
+  }
 
-      .tagline {
-        font-size: 0.92rem;
-        letter-spacing: 0.11em;
-        line-height: 1.5;
-      }
+  .logo {
+    width: 62vw;
+    max-width: 260px;
+    margin-bottom: 0;
+  }
 
-      .access-input {
-        height: 56px;
-        border-radius: 12px;
-        font-size: 1rem;
-      }
+  .landing-logo {
+    width: 62vw;
+    max-width: 260px;
+    margin-bottom: 0;
+  }
 
-      footer {
-        font-size: 0.85rem;
-      }
+  h1,
+  .landing h1 {
+    font-size: clamp(28px, 7.2vw, 40px);
+    line-height: 1.08;
+    max-width: 11ch;
+    white-space: normal !important;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: normal;
+    margin: 0 auto 8px;
+  }
+
+  .tagline {
+    font-size: 13px;
+    line-height: 1.45;
+    letter-spacing: 0.10em;
+    white-space: normal !important;
+    max-width: 92vw;
+    margin: 0 auto 14px;
+  }
+
+  .access-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .access-input {
+    width: 100%;
+    max-width: 340px;
+    height: 58px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  footer,
+  footer .footer-line {
+    white-space: normal !important;
+    max-width: 92vw;
+    margin: 0 auto;
+    line-height: 1.45;
+  }
     }
   </style>
 </head>
@@ -299,4 +340,5 @@
   </script>
 </body>
 </html>
+
 
