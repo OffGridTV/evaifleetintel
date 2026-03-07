@@ -117,36 +117,48 @@ footer a:hover {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+/* =========================
+   DESKTOP LAYOUT
+   ========================= */
+
+@media (min-width: 1024px) {
+
   .landing {
-    padding: 24px 16px 16px;
+    padding: 60px 40px 40px;
+  }
+
+  .landing-main {
+    max-width: 1100px;
+    width: 100%;
   }
 
   .landing-logo {
-    width: min(82vw, 300px);
-    margin-bottom: 14px;
+    width: 280px;
+    margin-bottom: 40px;
   }
 
   .landing h1 {
-    font-size: clamp(24px, 7vw, 32px);
-    max-width: 11ch;
-    margin-bottom: 12px;
+    font-size: 56px;
+    line-height: 1.05;
+    max-width: 900px;
   }
 
   .tagline {
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    margin-bottom: 20px;
+    font-size: 18px;
+    letter-spacing: 0.18em;
+    margin-bottom: 40px;
   }
 
   .access-input {
-    max-width: 100%;
+    width: 420px;
+    font-size: 16px;
+    padding: 16px 20px;
   }
 
   footer {
-    font-size: 12px;
-    padding-bottom: 4px;
+    font-size: 14px;
   }
+
 }
 </style>
 </head>
@@ -193,3 +205,4 @@ function unlock() {
 
 </body>
 </html>
+
