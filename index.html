@@ -1,203 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>EVAI</title>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>EVAI</title>
 
-<style>
-@font-face {
-  font-family: "Synonym";
-  src: url("fonts/Synonym-Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: "Alpino";
-  src: url("fonts/Alpino-Medium.otf") format("opentype");
-}
+  <style>
+    @font-face {
+      font-family: "Synonym";
+      src: url("fonts/Synonym-Regular.otf") format("opentype");
+      font-display: swap;
+    }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    @font-face {
+      font-family: "Alpino";
+      src: url("fonts/Alpino-Medium.otf") format("opentype");
+      font-display: swap;
+    }
 
-html, body {
-  width: 100%;
-  min-height: 100%;
-}
+    :root {
+      --bg: #eaf2fb;
+      --text: #0b1f33;
+      --border: #7ea0c3;
+      --muted: #8d9299;
+      --content-max: 1400px;
+    }
 
-body {
-  background: #eaf2fb;
-  color: #0b1f33;
-  font-family: "Synonym", sans-serif;
-}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+    }
 
-/* LANDING PAGE */
-.landing {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  padding: 28px 18px 18px;
-  gap: 24px;
-}
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
 
-.landing-main {
-  width: 100%;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: auto 0;
-}
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Synonym", sans-serif;
+      overflow-x: hidden;
+    }
 
-/* LOGO */
-.landing-logo {
-  width: min(48vw, 560px);
-  margin-bottom: 34px;
-}
+    .page {
+      min-height: 100vh;
+      width: 100%;
+      padding: 24px 16px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-/* HEADLINE */
-.landing h1 {
-  font-family: "Alpino", serif;
-  font-size: clamp(38px, 3vw, 60px);
-  line-height: 1.1;
-  margin-bottom: 18px;
-  max-width: 1000px;
-}
+    .hero {
+      flex: 1;
+      width: 100%;
+      max-width: var(--content-max);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 18px;
+    }
 
-/* TAGLINE */
-.tagline {
-  font-size: clamp(14px, 1.1vw, 18px);
-  letter-spacing: 0.18em;
-  white-space: nowrap;
-}
+    .logo {
+      width: min(78vw, 520px);
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
 
-/* ACCESS INPUT */
-.access-input {
-  padding: 14px 18px;
-  font-size: 15px;
-  border: 1px solid #6f96bb;
-  border-radius: 10px;
-  background: transparent;
-  text-align: center;
-  width: 100%;
-  max-width: 320px;
-  color: #0b1f33;
-  outline: none;
-}
+    h1 {
+      font-family: "Alpino", serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+      text-wrap: balance;
+    }
 
-.access-input::placeholder {
-  color: #8a8f96;
-  letter-spacing: 0.04em;
-}
+    .tagline {
+      font-size: clamp(0.95rem, 2.5vw, 1.55rem);
+      line-height: 1.45;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      max-width: 100%;
+      word-break: normal;
+    }
 
-/* FOOTER */
-footer {
-  font-size: 14px;
-  white-space: nowrap;
-}
+    .access-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
 
-footer a {
-  color: #0b1f33;
-  text-decoration: none;
-  margin: 0 4px;
-}
+    .access-input {
+      width: min(100%, 420px);
+      height: 60px;
+      padding: 0 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      background: transparent;
+      color: var(--text);
+      text-align: center;
+      font-size: 1.05rem;
+      font-family: "Synonym", sans-serif;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+    }
 
-footer a:hover {
-  text-decoration: underline;
-}
+    .access-input::placeholder {
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
 
-/* MOBILE */
-/* =========================
-   DESKTOP LAYOUT
-   ========================= */
+    footer {
+      width: 100%;
+      max-width: var(--content-max);
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
 
-@media (min-width: 1024px) {
+    footer .footer-line {
+      display: inline-block;
+      max-width: 100%;
+    }
 
-  .landing {
-    padding: 60px 40px 40px;
-  }
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
 
-  .landing-main {
-    max-width: 1100px;
-    width: 100%;
-  }
+    footer a:hover {
+      text-decoration: underline;
+    }
 
-  .landing-logo {
-    width: 280px;
-    margin-bottom: 40px;
-  }
+    /* Tablet */
+    @media (min-width: 768px) {
+      .page {
+        padding: 34px 28px 24px;
+      }
 
-  .landing h1 {
-    font-size: 56px;
-    line-height: 1.05;
-    max-width: 900px;
-  }
+      .hero {
+        gap: 22px;
+      }
 
-  .tagline {
-    font-size: 18px;
-    letter-spacing: 0.18em;
-    margin-bottom: 40px;
-  }
+      .logo {
+        width: min(50vw, 620px);
+        margin-bottom: 6px;
+      }
 
-  .access-input {
-    width: 420px;
-    font-size: 16px;
-    padding: 16px 20px;
-  }
+      h1 {
+        max-width: 20ch;
+      }
 
-  footer {
-    font-size: 14px;
-  }
+      .tagline {
+        letter-spacing: 0.18em;
+      }
 
-}
-</style>
+      .access-input {
+        width: min(100%, 460px);
+        height: 64px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Laptop / desktop */
+    @media (min-width: 1024px) {
+      .page {
+        padding: 42px 40px 26px;
+      }
+
+      .hero {
+        gap: 24px;
+      }
+
+      .logo {
+        width: min(38vw, 760px);
+        margin-bottom: 4px;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 4.1vw, 5.2rem);
+        max-width: none;
+        white-space: nowrap;
+      }
+
+      .tagline {
+        font-size: clamp(1rem, 1.15vw, 1.3rem);
+        white-space: nowrap;
+      }
+
+      .access-input {
+        width: 440px;
+      }
+
+      footer .footer-line {
+        white-space: nowrap;
+      }
+    }
+
+    /* Smaller phones */
+    @media (max-width: 480px) {
+      .page {
+        padding: 20px 14px 16px;
+      }
+
+      .hero {
+        gap: 16px;
+      }
+
+      .logo {
+        width: min(84vw, 420px);
+      }
+
+      h1 {
+        font-size: clamp(1.9rem, 8vw, 2.5rem);
+        max-width: 12ch;
+      }
+
+      .tagline {
+        font-size: 0.92rem;
+        letter-spacing: 0.11em;
+        line-height: 1.5;
+      }
+
+      .access-input {
+        height: 56px;
+        border-radius: 12px;
+        font-size: 1rem;
+      }
+
+      footer {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div class="page">
+    <main class="hero">
+      <img src="evai.svg" alt="EVAI" class="logo" />
 
-<div class="landing">
+      <h1>Enterprise Vehicle Architecture Intelligence</h1>
 
-  <div class="landing-main">
+      <div class="tagline">
+        Translation Layers · Phased Reveal · Active Alignment
+      </div>
 
-    <img src="evai.svg" alt="EVAI" class="landing-logo" />
+      <div class="access-wrap">
+        <input
+          type="password"
+          class="access-input"
+          id="codeInput"
+          placeholder="ACCESS CODE"
+          onkeydown="if(event.key === 'Enter') unlock()"
+        />
+      </div>
+    </main>
 
-    <h1>Enterprise Vehicle Architecture Intelligence</h1>
-
-    <div class="tagline">
-      Translation Layers · Phased Reveal · Active Alignment
-    </div>
-
-    <input
-      type="password"
-      class="access-input"
-      id="codeInput"
-      placeholder="ACCESS CODE"
-      onkeydown="if(event.key==='Enter') unlock()"
-    />
-
+    <footer>
+      <span class="footer-line">
+        © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
+        <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a>
+        ·
+        <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
+      </span>
+    </footer>
   </div>
 
-  <footer>
-    © 2025 Enterprise Vehicle Architecture Intelligence (EVAI) ·
-    <a href="https://fleetai.network" target="_blank">fleetai.network</a> ·
-    <a href="https://evai.us" target="_blank">evai.us</a>
-  </footer>
-
-</div>
-
-<script>
-function unlock() {
-  if (document.getElementById("codeInput").value === "NOF9310") {
-    window.location.href = "access.html";
-  }
-}
-</script>
-
+  <script>
+    function unlock() {
+      const input = document.getElementById("codeInput");
+      if (input.value === "NOF9310") {
+        window.location.href = "access.html";
+      }
+    }
+  </script>
 </body>
 </html>
-
-
