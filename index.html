@@ -19,7 +19,7 @@
     }
 
     :root {
-      --bg: #eaf2fb;
+      --bg: linear-gradient(180deg, #eaf4ff 0%, #f4f8fc 100%);
       --text: #0b1f33;
       --border: #7ea0c3;
       --muted: #6b7280;
@@ -45,14 +45,15 @@
     }
 
     header {
-      text-align: center;
-      margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 50px;
+  
     }
 
-    .logo {
-      width: 140px;
-      display: block;
-      margin: 0 auto 12px;
+    logo {
+  width: clamp(180px, 22vw, 260px);
+  margin-bottom: 20px;
+    
     }
 
     h2 {
@@ -107,10 +108,10 @@
     <header>
       <img src="evai.svg" alt="EVAI Logo" class="logo" />
 
-      <h2>System Variance Analysis & Risk Interpretation</h2>
+      <h2>System-Level Variance Analysis & Risk Interpretation</h2>
 
       <div class="tagline">
-        Measured Variance · System Context · Risk Translation
+        Measured Variance · System Context · Risk Prioritization
       </div>
     </header>
 
@@ -172,7 +173,7 @@
     </section>
 
     <footer>
-      JT Johns · Cybersecurity Analyst
+      Joshua T. Johnson · Cybersecurity Analyst
     </footer>
 
   </div>
