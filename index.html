@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>EVAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EVAI — Variance Analysis Framework</title>
 
   <style>
     @font-face {
@@ -22,7 +22,7 @@
       --bg: #eaf2fb;
       --text: #0b1f33;
       --border: #7ea0c3;
-      --muted: #8f949b;
+      --muted: #6b7280;
     }
 
     * {
@@ -31,229 +31,150 @@
       padding: 0;
     }
 
-    html,
-    body {
-      width: 100%;
-      min-height: 100%;
-      overflow-x: hidden;
-      -webkit-text-size-adjust: 100%;
-    }
-
     body {
       background: var(--bg);
       color: var(--text);
       font-family: "Synonym", sans-serif;
+      line-height: 1.6;
     }
 
-    .page {
-      min-height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 16px 16px;
-      overflow-x: hidden;
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
     }
 
-    .hero {
-      width: 100%;
-      max-width: 1400px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    header {
       text-align: center;
+      margin-bottom: 40px;
     }
 
     .logo {
+      width: 140px;
       display: block;
-      width: min(70vw, 300px);
-      height: auto;
-      margin: 0 auto 14px;
+      margin: 0 auto 12px;
     }
 
-    h1 {
+    h2 {
       font-family: "Alpino", serif;
       font-weight: 500;
-      font-size: clamp(2rem, 8vw, 3rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      max-width: 11ch;
-      margin: 0 auto 14px;
-      white-space: normal;
-      overflow-wrap: anywhere;
+      font-size: 28px;
+      margin-bottom: 10px;
     }
 
     .tagline {
-      width: 100%;
-      max-width: 340px;
-      margin: 0 auto 20px;
-      font-size: 0.95rem;
-      line-height: 1.45;
-      letter-spacing: 0.10em;
+      font-size: 13px;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      white-space: normal;
-    }
-
-    .access-input {
-      display: block;
-      width: min(100%, 340px);
-      height: 58px;
-      margin: 0 auto;
-      padding: 0 16px;
-      border: 1.5px solid var(--border);
-      border-radius: 16px;
-      background: transparent;
-      color: var(--text);
-      text-align: center;
-      font-size: 1rem;
-      font-family: "Synonym", sans-serif;
-      outline: none;
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    .access-input::placeholder {
       color: var(--muted);
-      letter-spacing: 0.04em;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h3 {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+
+    .example {
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 8px;
+      background: #ffffff;
     }
 
     footer {
-      width: 100%;
-      max-width: 340px;
-      margin: 18px auto 0;
       text-align: center;
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    footer a {
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* TABLET */
-    @media (min-width: 768px) {
-      .page {
-        padding: 26px 24px 20px;
-      }
-
-      .logo {
-        width: min(52vw, 420px);
-        margin-bottom: 16px;
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 5vw, 4.3rem);
-        max-width: 15ch;
-        margin-bottom: 16px;
-      }
-
-      .tagline {
-        max-width: 800px;
-        font-size: 1rem;
-        letter-spacing: 0.14em;
-        margin-bottom: 24px;
-      }
-
-      .access-input {
-        width: min(100%, 420px);
-        height: 60px;
-        font-size: 1.05rem;
-      }
-
-      footer {
-        max-width: 760px;
-        font-size: 0.95rem;
-      }
-    }
-
-    /* LAPTOP / DESKTOP */
-    @media (min-width: 1024px) {
-      .page {
-        padding: 10px 40px 24px;
-      }
-
-      .hero {
-        transform: translateY(-22px);
-      }
-
-      .logo {
-        width: min(42vw, 520px);
-        margin-bottom: 8px;
-      }
-
-      h1 {
-        font-size: clamp(3.3rem, 4.1vw, 5.4rem);
-        max-width: none;
-        white-space: nowrap;
-        margin-bottom: 18px;
-      }
-
-      .tagline {
-        max-width: none;
-        white-space: nowrap;
-        font-size: clamp(1rem, 1.1vw, 1.25rem);
-        letter-spacing: 0.18em;
-        margin-bottom: 28px;
-      }
-
-      .access-input {
-        width: 540px;
-        height: 64px;
-        font-size: 1.08rem;
-        border-radius: 18px;
-      }
-
-      footer {
-        max-width: none;
-        white-space: nowrap;
-        font-size: 0.95rem;
-      }
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <main class="hero">
-      <img src="evai.svg" alt="EVAI" class="logo" />
+  <div class="container">
 
-      <h1>Environmental Variance Intelligence</h1>
+    <header>
+      <img src="evai.svg" alt="EVAI Logo" class="logo" />
+
+      <h2>System Variance Analysis & Risk Interpretation</h2>
 
       <div class="tagline">
         Measured Variance · System Context · Risk Translation
       </div>
+    </header>
 
-      <input
-        type="password"
-        class="access-input"
-        id="codeInput"
-        placeholder="ACCESS CODE"
-        onkeydown="if(event.key === 'Enter') unlock()"
-      />
-    </main>
+    <section>
+      <h3>What is EVAI?</h3>
+      <p>
+        EVAI is a structured analytical framework designed to identify system-level anomalies,
+        interpret environmental context, and translate findings into actionable security and risk insights.
+      </p>
+    </section>
+
+    <section>
+      <h3>Analytical Approach</h3>
+
+      <p><strong>Detect Variance:</strong> Identify deviations from expected system behavior using baseline comparison.</p>
+
+      <p><strong>Interpret Context:</strong> Analyze environmental factors to determine relevance and significance.</p>
+
+      <p><strong>Translate Risk:</strong> Convert findings into actionable insights based on potential impact.</p>
+    </section>
+
+    <section>
+      <h3>Example Analysis</h3>
+
+      <div class="example">
+        <p><strong>Scenario:</strong> Repeated DNS requests to an unfamiliar domain</p>
+
+        <p><strong>Observed Variance:</strong> Elevated query frequency outside baseline behavior</p>
+
+        <p><strong>Context:</strong> Originating from a single host with irregular timing</p>
+
+        <p><strong>Interpretation:</strong> Potential automated beaconing behavior</p>
+
+        <p><strong>Risk Translation:</strong> Requires further investigation; possible command-and-control activity</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>Tools & Methods</h3>
+      <p>
+        Wireshark · Autopsy · Windows Event Logs · Splunk (In Progress) · Log Analysis · Incident Triage
+      </p>
+    </section>
+
+    <section>
+      <h3>Focus Areas</h3>
+      <p>
+        Security Operations · Incident Analysis · Log Investigation · Pattern Recognition
+      </p>
+    </section>
+
+    <section>
+      <h3>About</h3>
+      <p>
+        Cybersecurity graduate student focused on security operations, incident analysis,
+        and system-level investigation. Emphasis on understanding system behavior and
+        identifying meaningful deviations that indicate risk.
+      </p>
+    </section>
 
     <footer>
-      © 2025 Environmental Variance Intelligence (EVAI) ·
-      <a href="https://fleetai.network" target="_blank" rel="noopener noreferrer">fleetai.network</a>
-      ·
-      <a href="https://evai.us" target="_blank" rel="noopener noreferrer">evai.us</a>
+      JT Johns · Cybersecurity Analyst
     </footer>
-  </div>
 
-  <script>
-    function unlock() {
-      if (document.getElementById("codeInput").value === "NOF9310") {
-        window.location.href = "access.html";
-      }
-    }
-  </script>
+  </div>
 </body>
 </html>
