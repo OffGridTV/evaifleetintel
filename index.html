@@ -9,50 +9,49 @@
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Regular.otf") format("opentype");
-}
+    }
 
     @font-face {
       font-family: "Alpino";
       src: url("fonts/Alpino-Medium.otf") format("opentype");
-}
+    }
 
- .body {
-  margin: 0;
-  min-height: 100vh;
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #cfe0f8 0%, #e3ecfb 100%);
+      font-family: "Synonym", sans-serif;
+      color: #0a1a2f;
+      text-align: center;
+    }
 
-  /* keep centered but control vertical space */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    .wrap {
+      width: 100%;
+      max-width: 900px;
+      padding: 0 20px;
+    }
 
-  /* stronger blue */
-  background: #d7e4f5;
+    .logo {
+      width: clamp(420px, 60vw, 700px);
+      margin-bottom: 40px;
+    }
 
-  text-align: center;
-}
+    h1 {
+      font-family: "Alpino", serif;
+      font-size: clamp(24px, 2.5vw, 34px);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
 
-.wrap {
-  width: 100%;
-  max-width: 900px;
-
-  /* THIS is the key fix */
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
-.logo {
-  /* tighten space below logo */
-  margin-bottom: 60px;
-}
-
-h1 {
-  /* bring headline closer to logo */
-  margin-bottom: 14px;
-}
-
-.sub {
-  margin-top: 6px;
-}
+    .sub {
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
   </style>
 </head>
 
@@ -61,10 +60,10 @@ h1 {
 
     <img src="evai.svg" class="logo" />
 
-    <h1>Environmental Variance Analysis</h1>
+    <h1>System variance analysis and risk interpretation</h1>
 
     <div class="sub">
-      Intelligence · Context · Quantified 
+      Measured variance · system context · risk prioritization
     </div>
 
   </div>
