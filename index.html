@@ -3,182 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EVAI — Variance Analysis Framework</title>
+  <title>EVAI</title>
 
   <style>
     @font-face {
       font-family: "Synonym";
       src: url("fonts/Synonym-Regular.otf") format("opentype");
-      font-display: swap;
     }
 
     @font-face {
       font-family: "Alpino";
       src: url("fonts/Alpino-Medium.otf") format("opentype");
-      font-display: swap;
     }
 
-    :root {
-      --bg: linear-gradient(180deg, #eaf4ff 0%, #f4f8fc 100%);
-      --text: #0b1f33;
-      --border: #7ea0c3;
-      --muted: #6b7280;
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3edfb;
+  font-family: "Synonym", sans-serif;
+  color: #0b1f33;
+  text-align: center;
+  
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "Synonym", sans-serif;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 60px 20px 40px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 80px;
+    .wrap {
+      max-width: 620px;
+      padding: 20px;
     }
 
     .logo {
-      width: clamp(140px, 16vw, 200px);
-      display: block;
-      margin: 0 auto 24px;
+      width: clamp(180px, 22vw, 260px);
+      margin-bottom: 28px;
     }
 
-    h2 {
+    h1 {
       font-family: "Alpino", serif;
       font-weight: 500;
-      font-size: clamp(22px, 2.2vw, 30px);
-      margin-bottom: 14px;
-    }
-
-    .tagline {
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.7;
-      margin-bottom: 30px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    section:first-of-type {
-      margin-top: 40px;
-    }
-
-    h3 {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 10px;
-      margin-bottom: 16px;
-      font-size: 18px;
-    }
-
-    p {
+      font-size: clamp(20px, 2.2vw, 26px);
       margin-bottom: 10px;
-      font-size: 15px;
     }
 
-    .example {
-      border: 1px solid var(--border);
-      padding: 18px;
-      border-radius: 10px;
-      background: #ffffff;
+    .sub {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 36px;
     }
 
-    footer {
-      text-align: center;
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 60px;
+    .signal {
+      font-size: 14px;
+      opacity: 0.85;
+      line-height: 1.5;
+    }
+
+    .signal strong {
+      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrap">
 
-    <header>
-      <img src="evai.svg" alt="EVAI Logo" class="logo" />
+    <img src="evai.svg" class="logo" />
 
-      <h2>System-Level Variance Analysis & Risk Interpretation</h2>
+    <h1>System variance analysis and risk interpretation</h1>
 
-      <div class="tagline">
-        Measured Variance · System Context · Risk Prioritization
-      </div>
-    </header>
+    <div class="sub">
+      Measured variance · system context · risk prioritization
+    </div>
 
-    <section>
-      <h3>What is EVAI?</h3>
-      <p>
-        EVAI is a structured analytical framework designed to identify system-level anomalies,
-        interpret environmental context, and translate findings into actionable risk insights.
-      </p>
-    </section>
-
-    <section>
-      <h3>Analytical Approach</h3>
-
-      <p><strong>Detect Variance:</strong> Identify deviations from expected system behavior using baseline comparison.</p>
-
-      <p><strong>Interpret Context:</strong> Analyze environmental factors to determine relevance and significance.</p>
-
-      <p><strong>Translate Risk:</strong> Convert findings into actionable insights based on potential impact.</p>
-    </section>
-
-    <section>
-      <h3>Sample Investigation</h3>
-
-      <div class="example">
-        <p><strong>Scenario:</strong> Repeated DNS requests to an unfamiliar domain</p>
-
-        <p><strong>Observed Variance:</strong> Elevated query frequency outside baseline behavior</p>
-
-        <p><strong>Context:</strong> Originating from a single host with irregular timing</p>
-
-        <p><strong>Interpretation:</strong> Potential automated beaconing behavior</p>
-
-        <p><strong>Risk Assessment:</strong> Potential command-and-control activity; requires escalation and further investigation</p>
-      </div>
-    </section>
-
-    <section>
-      <h3>Tools & Methods</h3>
-      <p>
-        Wireshark · Autopsy · Windows Event Logs · Splunk (In Progress) · Log Analysis · Incident Triage
-      </p>
-    </section>
-
-    <section>
-      <h3>Focus Areas</h3>
-      <p>
-        Security Operations · Incident Analysis · Log Investigation · Pattern Recognition
-      </p>
-    </section>
-
-    <section>
-      <h3>About</h3>
-      <p>
-        Cybersecurity graduate student focused on security operations, incident analysis,
-        and system-level investigation. Emphasis on understanding system behavior and
-        identifying meaningful deviations that indicate risk.
-      </p>
-    </section>
-
-    <footer>
-      JT Johns · Cybersecurity Analyst
-    </footer>
+    <div class="signal">
+      <strong>Signal:</strong> Repeated DNS requests to an unfamiliar domain originating from a single host.  
+      Pattern suggests automated activity requiring investigation and escalation.
+    </div>
 
   </div>
 </body>
