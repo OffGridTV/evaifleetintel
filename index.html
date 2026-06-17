@@ -5,32 +5,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EVAI | Variance Intelligence</title>
+<title>EVAI | Risk Intelligence</title>
 
 <style>
 
-@font-face {
-    font-family: "Synonym";
-    src: url("fonts/Synonym-Regular.otf") format("opentype");
+@font-face{
+    font-family:"Synonym";
+    src:url("fonts/Synonym-Regular.otf") format("opentype");
 }
 
-@font-face {
-    font-family: "SynonymMedium";
-    src: url("fonts/Synonym-Medium.otf") format("opentype");
+@font-face{
+    font-family:"SynonymMedium";
+    src:url("fonts/Synonym-Medium.otf") format("opentype");
 }
 
-@font-face {
-    font-family: "Alpino";
-    src: url("fonts/Alpino-Medium.otf") format("opentype");
+@font-face{
+    font-family:"Alpino";
+    src:url("fonts/Alpino-Medium.otf") format("opentype");
 }
 
 :root{
     --bg:#040b16;
-    --card:rgba(11,18,32,.65);
-    --border:rgba(255,255,255,.08);
-    --text:#d7dee8;
-    --muted:#9fb0c7;
+    --card:rgba(8,16,32,.72);
+
+    --text:#d4dbe5;
+    --muted:#8fa0b7;
+
     --accent:#74b3ff;
+
+    --border:rgba(255,255,255,.08);
 }
 
 *{
@@ -39,17 +42,29 @@
     box-sizing:border-box;
 }
 
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
 body{
     min-height:100vh;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     overflow:hidden;
+
     background:
-        radial-gradient(circle at top, #16325f 0%, #040b16 45%),
-        #040b16;
+        radial-gradient(circle at top center,
+        #13305c 0%,
+        #081426 35%,
+        #040b16 70%);
+
     font-family:"Synonym",sans-serif;
     color:var(--text);
+
     position:relative;
 }
 
@@ -61,12 +76,14 @@ body::before{
     inset:0;
 
     background:
-        linear-gradient(rgba(78,163,255,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(78,163,255,.05) 1px, transparent 1px);
+        linear-gradient(rgba(116,179,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(116,179,255,.04) 1px, transparent 1px);
 
     background-size:60px 60px;
 
-    animation:gridMove 20s linear infinite;
+    animation:gridMove 18s linear infinite;
+
+    pointer-events:none;
 }
 
 @keyframes gridMove{
@@ -78,161 +95,219 @@ body::before{
     }
 }
 
-/* logo glow */
+/* page glow */
 
-.glow{
+.page-glow{
     position:absolute;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle,
-        rgba(78,163,255,.35),
+
+    width:900px;
+    height:900px;
+
+    background:
+        radial-gradient(circle,
+        rgba(116,179,255,.10),
         transparent 70%);
+
     filter:blur(80px);
-    z-index:0;
+
+    pointer-events:none;
 }
+
+/* main container */
 
 .container{
     position:relative;
     z-index:2;
 
-    width:min(1200px,92%);
-    padding:70px;
+    width:min(1200px,92vw);
+
+    padding:70px 60px;
+
+    text-align:center;
+
+    border-radius:34px;
 
     border:1px solid var(--border);
 
     background:var(--card);
 
     backdrop-filter:blur(20px);
-
-    border-radius:30px;
-
-    text-align:center;
 }
 
 /* logo */
 
 .logo-wrap{
     position:relative;
-    display:inline-block;
+
+    display:flex;
+    justify-content:center;
+
+    margin-bottom:42px;
 }
 
 .logo-wrap::before{
     content:"";
+
     position:absolute;
+
     left:50%;
     top:50%;
 
-    width:500px;
-    height:220px;
+    width:540px;
+    height:240px;
 
     transform:translate(-50%,-50%);
 
-    background:radial-gradient(
+    background:
+        radial-gradient(
         ellipse,
-        rgba(110,174,252,.12),
-        transparent 70%
-    );
+        rgba(116,179,255,.14),
+        transparent 72%);
 
-    z-index:-1;
+    z-index:0;
 }
+
+.logo{
+    position:relative;
+    z-index:1;
+
+    width:420px;
+    max-width:90%;
+
+    opacity:.95;
+
+    filter:
+        brightness(1.15)
+        contrast(1.05)
+        drop-shadow(0 0 18px rgba(116,179,255,.18))
+        drop-shadow(0 0 40px rgba(116,179,255,.08));
+}
+
 /* status */
 
 .status{
     display:inline-flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 
     color:var(--accent);
 
     text-transform:uppercase;
 
-    letter-spacing:.15em;
+    letter-spacing:.18em;
 
-    font-size:.75rem;
+    font-size:.78rem;
 
-    margin-bottom:25px;
+    margin-bottom:28px;
 }
 
 .status::before{
     content:"";
+
     width:10px;
     height:10px;
+
     border-radius:50%;
+
     background:var(--accent);
 
     box-shadow:
-        0 0 15px var(--accent),
-        0 0 25px var(--accent);
+        0 0 12px var(--accent),
+        0 0 24px rgba(116,179,255,.4);
 }
 
 /* headline */
 
 .headline{
+    font-family:"Alpino",serif;
+
     font-size:clamp(3rem,5vw,4.8rem);
+
     line-height:1.05;
-}
 
-.headline span{
-    color:var(--accent)
     font-weight:500;
+
+    margin-bottom:22px;
+
+    color:var(--text);
 }
 
-.subheadline{
-    font-size:1.35rem;
-    max-width:850px;
-    margin:0 auto 50px auto;
+/* description */
+
+.description{
+    max-width:980px;
+
+    margin:0 auto 55px auto;
+
+    font-size:1.25rem;
+
+    line-height:1.8;
+
     color:var(--muted);
-    line-height:1.7;
 }
 
 /* divider */
 
 .divider{
-    width:200px;
+    width:280px;
     height:1px;
-    background:rgba(255,255,255,.15);
-    margin:0 auto 55px auto;
+
+    margin:0 auto 50px auto;
+
+    background:
+        linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent);
 }
 
-/* cards */
+/* capability cards */
 
 .cards{
     display:flex;
+
     justify-content:center;
-    gap:25px;
+
+    gap:24px;
+
     flex-wrap:wrap;
 }
 
 .card{
     width:280px;
-    padding:30px;
+
+    padding:28px;
+
+    border-radius:18px;
 
     background:rgba(255,255,255,.03);
 
-    border:1px solid rgba(255,255,255,.06);
-
-    border-radius:20px;
+    border:1px solid rgba(255,255,255,.05);
 
     transition:.3s ease;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-6px);
 
-    border-color:rgba(78,163,255,.4);
+    border-color:rgba(116,179,255,.25);
 
     box-shadow:
-        0 15px 40px rgba(78,163,255,.15);
+        0 12px 30px rgba(116,179,255,.08);
 }
 
 .card h3{
     font-family:"Alpino",serif;
+
     font-size:1.7rem;
-    margin-bottom:12px;
+
+    margin-bottom:10px;
 }
 
 .card p{
     color:var(--muted);
+
     line-height:1.6;
 }
 
@@ -240,13 +315,17 @@ body::before{
 
 .footer{
     margin-top:50px;
-    color:#7f90a8;
-    font-size:.9rem;
-    letter-spacing:.08em;
+
+    font-size:.75rem;
+
+    letter-spacing:.25em;
+
     text-transform:uppercase;
+
+    color:#70839c;
 }
 
-@media(max-width:900px){
+@media (max-width:900px){
 
     body{
         overflow-y:auto;
@@ -257,11 +336,15 @@ body::before{
         padding:50px 25px;
     }
 
+    .logo{
+        width:320px;
+    }
+
     .headline{
         font-size:3rem;
     }
 
-    .subheadline{
+    .description{
         font-size:1.05rem;
     }
 }
@@ -271,62 +354,62 @@ body::before{
 
 <body>
 
-<div class="glow"></div>
+<div class="page-glow"></div>
 
 <div class="container">
-<div class="logo-wrap">
-    <img src="evai.svg" alt="EVAI" class="logo">
-</div>
-<img src="evai.svg" alt="EVAI" class="logo">
 
-<div class="status">
-Platform Development Active
-</div>
-
-<h1 class="headline">
-Variance Reveals <span>Risk</span>
-</h1>
-
-<p class="subheadline">
-EVAI transforms operational, cybersecurity, compliance, and business
-signals into actionable enterprise intelligence. Identify what matters,
-understand why it matters, and focus resources where risk, resilience,
-and opportunity intersect.
-</p>
-
-<div class="divider"></div>
-
-<div class="cards">
-
-    <div class="card">
-        <h3>Detect</h3>
-        <p>
-            Identify anomalies, deviations, and emerging threats
-            before they become operational failures.
-        </p>
+    <div class="logo-wrap">
+        <img src="evai.svg" alt="EVAI" class="logo">
     </div>
 
-    <div class="card">
-        <h3>Correlate</h3>
-        <p>
-            Connect technical, operational, and human signals
-            across the enterprise.
-        </p>
+    <div class="status">
+        Platform Development Active
     </div>
 
-    <div class="card">
-        <h3>Decide</h3>
-        <p>
-            Prioritize actions using meaningful risk intelligence,
-            not dashboard noise.
-        </p>
+    <h1 class="headline">
+        Variance Reveals Risk
+    </h1>
+
+    <p class="description">
+        EVAI transforms operational, cybersecurity, compliance, and business
+        signals into actionable enterprise intelligence. Identify what matters,
+        understand why it matters, and focus resources where risk, resilience,
+        and opportunity intersect.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Detect</h3>
+            <p>
+                Identify anomalies, deviations, and emerging threats before
+                they become operational failures.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Correlate</h3>
+            <p>
+                Connect technical, operational, and human signals across
+                the enterprise.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Decide</h3>
+            <p>
+                Prioritize actions using meaningful risk intelligence,
+                not dashboard noise.
+            </p>
+        </div>
+
     </div>
 
-</div>
-
-<div class="footer">
-Enterprise Variance Architecture Intelligence
-</div>
+    <div class="footer">
+        Enterprise Variance Architecture Intelligence
+    </div>
 
 </div>
 
