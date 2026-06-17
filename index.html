@@ -9,12 +9,12 @@
 
 <style>
 
-@font-face {
+@font-face{
     font-family:"Synonym";
     src:url("fonts/Synonym-Regular.otf") format("opentype");
 }
 
-@font-face {
+@font-face{
     font-family:"Alpino";
     src:url("fonts/Alpino-Medium.otf") format("opentype");
 }
@@ -38,10 +38,12 @@
 }
 
 body{
+
     min-height:100vh;
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     overflow:hidden;
 
@@ -61,7 +63,9 @@ body{
 /* GRID */
 
 body::before{
+
     content:"";
+
     position:absolute;
     inset:0;
 
@@ -70,6 +74,7 @@ body::before{
         linear-gradient(90deg, rgba(116,179,255,.04) 1px, transparent 1px);
 
     background-size:60px 60px;
+
     animation:gridMove 18s linear infinite;
 }
 
@@ -87,9 +92,7 @@ body::before{
 
     width:min(1200px,92vw);
 
-    min-height:820px;
-
-    padding:120px 60px 80px 60px;
+    padding:70px 60px 60px;
 
     text-align:center;
 
@@ -105,14 +108,17 @@ body::before{
 /* LOGO */
 
 .logo-wrap{
+
     position:relative;
+
     display:flex;
     justify-content:center;
 
-    margin-bottom:45px;
+    margin-bottom:25px;
 }
 
 .logo-wrap::before{
+
     content:"";
 
     position:absolute;
@@ -120,31 +126,26 @@ body::before{
     left:50%;
     top:50%;
 
-    width:620px;
-    height:260px;
+    width:520px;
+    height:220px;
 
     transform:translate(-50%,-50%);
 
     background:
         radial-gradient(
-        ellipse,
-        rgba(116,179,255,.16),
-        transparent 72%);
+            ellipse,
+            rgba(116,179,255,.12),
+            transparent 72%
+        );
 }
 
 .logo{
 
-    width:460px;
+    width:420px;
 
     max-width:90%;
 
-    opacity:.95;
-
-    filter:
-        brightness(1.15)
-        contrast(1.08)
-        drop-shadow(0 0 18px rgba(116,179,255,.18))
-        drop-shadow(0 0 45px rgba(116,179,255,.10));
+    opacity:.92;
 }
 
 /* STATUS */
@@ -153,6 +154,7 @@ body::before{
 
     display:inline-flex;
     align-items:center;
+
     gap:12px;
 
     color:var(--accent);
@@ -163,7 +165,7 @@ body::before{
 
     font-size:.78rem;
 
-    margin-bottom:28px;
+    margin-bottom:20px;
 }
 
 .status::before{
@@ -178,8 +180,8 @@ body::before{
     background:var(--accent);
 
     box-shadow:
-        0 0 12px var(--accent),
-        0 0 22px rgba(116,179,255,.45);
+        0 0 10px var(--accent),
+        0 0 20px rgba(116,179,255,.4);
 }
 
 /* HEADLINE */
@@ -188,26 +190,26 @@ body::before{
 
     font-family:"Alpino",serif;
 
-    font-size:clamp(2.8rem,4.5vw,4.4rem);
-
-    line-height:1.1;
+    font-size:clamp(2.8rem,4.2vw,4.2rem);
 
     font-weight:500;
 
-    margin-bottom:28px;
+    line-height:1.1;
+
+    margin-bottom:20px;
 }
 
 /* DESCRIPTION */
 
 .description{
 
-    max-width:980px;
+    max-width:900px;
 
-    margin:0 auto 60px auto;
+    margin:0 auto 40px auto;
 
-    font-size:1.2rem;
+    font-size:1.15rem;
 
-    line-height:1.9;
+    line-height:1.8;
 
     color:var(--muted);
 }
@@ -216,17 +218,18 @@ body::before{
 
 .divider{
 
-    width:320px;
+    width:260px;
     height:1px;
 
-    margin:0 auto 60px auto;
+    margin:0 auto 40px auto;
 
     background:
         linear-gradient(
-        to right,
-        transparent,
-        rgba(255,255,255,.25),
-        transparent);
+            to right,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
 }
 
 /* CARDS */
@@ -234,6 +237,7 @@ body::before{
 .cards{
 
     display:flex;
+
     justify-content:center;
 
     gap:24px;
@@ -243,9 +247,9 @@ body::before{
 
 .card{
 
-    width:280px;
+    width:260px;
 
-    padding:30px;
+    padding:26px;
 
     border-radius:18px;
 
@@ -258,33 +262,35 @@ body::before{
 
 .card:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-5px);
 
-    border-color:rgba(116,179,255,.22);
+    border-color:rgba(116,179,255,.25);
 
     box-shadow:
-        0 12px 30px rgba(116,179,255,.08);
+        0 10px 25px rgba(116,179,255,.08);
 }
 
 .card h3{
 
     font-family:"Alpino",serif;
 
-    font-size:1.7rem;
+    font-size:1.6rem;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .card p{
 
     color:var(--muted);
 
-    line-height:1.7;
+    line-height:1.6;
 }
+
+/* FOOTER */
 
 .footer{
 
-    margin-top:55px;
+    margin-top:40px;
 
     font-size:.72rem;
 
@@ -303,12 +309,11 @@ body::before{
     }
 
     .container{
-        min-height:auto;
-        padding:80px 25px 50px 25px;
+        padding:50px 25px;
     }
 
     .logo{
-        width:340px;
+        width:320px;
     }
 
     .headline{
@@ -316,7 +321,7 @@ body::before{
     }
 
     .description{
-        font-size:1.05rem;
+        font-size:1rem;
     }
 }
 
@@ -355,24 +360,21 @@ body::before{
     <div class="card">
         <h3>Detect</h3>
         <p>
-            Identify anomalies, deviations, and emerging threats before
-            they become operational failures.
+            Identify anomalies, deviations, and emerging threats before they become operational failures.
         </p>
     </div>
 
     <div class="card">
         <h3>Correlate</h3>
         <p>
-            Connect technical, operational, and human signals across
-            the enterprise.
+            Connect technical, operational, and human signals across the enterprise.
         </p>
     </div>
 
     <div class="card">
         <h3>Decide</h3>
         <p>
-            Prioritize actions using meaningful risk intelligence,
-            not dashboard noise.
+            Prioritize actions using meaningful risk intelligence, not dashboard noise.
         </p>
     </div>
 
