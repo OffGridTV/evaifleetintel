@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>EVAI | Enterprise Variance Architecture Intelligence</title>
+<title>EVAI | Enterprise Variance & Risk Intelligence</title>
 
 <style>
+
 @font-face {
     font-family: "Synonym";
     src: url("fonts/Synonym-Regular.otf") format("opentype");
@@ -18,107 +19,157 @@
     src: url("fonts/Alpino-Medium.otf") format("opentype");
 }
 
-:root {
-    --bg1: #d5e3f7;
-    --bg2: #e7eefb;
-    --text: #09182d;
-    --muted: #44566f;
+:root{
+    --bg1:#d6e4f7;
+    --bg2:#e8effb;
+    --text:#09182d;
+    --muted:#52627a;
+    --line:rgba(9,24,45,.08);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
-    font-family: "Synonym", sans-serif;
-    color: var(--text);
-    overflow: hidden;
+body{
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(180deg,var(--bg1),var(--bg2));
+    font-family:"Synonym",sans-serif;
+    color:var(--text);
+    text-align:center;
+    position:relative;
 }
 
-.container {
-    width: 100%;
-    max-width: 1400px;
-    padding: 30px;
-    text-align: center;
+/* subtle network background */
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(9,24,45,.08) 2px, transparent 3px),
+        radial-gradient(circle at 70% 25%, rgba(9,24,45,.08) 2px, transparent 3px),
+        radial-gradient(circle at 80% 65%, rgba(9,24,45,.08) 2px, transparent 3px),
+        radial-gradient(circle at 30% 75%, rgba(9,24,45,.08) 2px, transparent 3px),
+        linear-gradient(var(--line),var(--line)),
+        linear-gradient(var(--line),var(--line)),
+        linear-gradient(var(--line),var(--line)),
+        linear-gradient(var(--line),var(--line));
+
+    background-size:
+        auto,
+        auto,
+        auto,
+        auto,
+        280px 1px,
+        1px 180px,
+        340px 1px,
+        1px 220px;
+
+    background-position:
+        20% 30%,
+        70% 25%,
+        80% 65%,
+        30% 75%,
+        18% 30%,
+        70% 25%,
+        30% 75%,
+        80% 65%;
+
+    background-repeat:no-repeat;
+    opacity:.55;
 }
 
-.logo {
-    width: clamp(420px, 50vw, 760px);
-    margin-bottom: 10px;
+.container{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:1200px;
+    padding:30px;
 }
 
-.tagline {
-    font-family: "Alpino", serif;
-    font-size: clamp(42px, 4vw, 68px);
-    line-height: 1.1;
-    margin-bottom: 18px;
+.logo{
+    width:clamp(320px,38vw,560px);
+    margin-bottom:14px;
 }
 
-.subheadline {
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-    font-size: clamp(18px, 1.4vw, 24px);
-    color: var(--muted);
-    line-height: 1.5;
+.company{
+    font-size:12px;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:28px;
 }
 
-.company-name {
-    display: inline-block;
-    margin-bottom: 40px;
-    font-size: 13px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    color: var(--muted);
+.tagline{
+    font-family:"Alpino",serif;
+    font-size:clamp(38px,4vw,60px);
+    line-height:1.08;
+    font-weight:500;
+    margin-bottom:22px;
 }
 
-.capabilities {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
+.description{
+    max-width:850px;
+    margin:0 auto 40px auto;
+    font-size:clamp(18px,1.2vw,22px);
+    color:var(--muted);
+    line-height:1.6;
 }
 
-.capability {
-    max-width: 240px;
+.divider{
+    width:180px;
+    height:1px;
+    background:rgba(9,24,45,.15);
+    margin:0 auto 35px auto;
 }
 
-.capability h3 {
-    font-family: "Alpino", serif;
-    font-size: 22px;
-    margin-bottom: 10px;
+.capabilities{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    flex-wrap:wrap;
 }
 
-.capability p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.5;
+.capability{
+    width:220px;
 }
 
-@media (max-width: 900px) {
+.capability h3{
+    font-family:"Alpino",serif;
+    font-size:22px;
+    margin-bottom:8px;
+}
 
-    body {
-        overflow-y: auto;
+.capability p{
+    font-size:15px;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+@media (max-width:900px){
+
+    body{
+        overflow-y:auto;
     }
 
-    .logo {
-        width: min(90vw, 650px);
+    .capabilities{
+        gap:28px;
     }
 
-    .capabilities {
-        gap: 30px;
-    }
-
-    .tagline {
-        font-size: 40px;
+    .capability{
+        width:100%;
+        max-width:350px;
     }
 }
+
 </style>
 
 </head>
@@ -128,10 +179,10 @@ body {
 <div class="container">
 
 ```
-<img src="evai.svg" alt="EVAI" class="logo">
+<img src="evai.svg" alt="EVAI Logo" class="logo">
 
-<div class="company-name">
-    Enterprise Variance Architecture Intelligence
+<div class="company">
+    Enterprise Variance & Risk Intelligence
 </div>
 
 <h1 class="tagline">
@@ -139,10 +190,12 @@ body {
     Prioritizing Risk.
 </h1>
 
-<p class="subheadline">
+<p class="description">
     Transforming complex operational data into actionable intelligence
     for cybersecurity, operational resilience, and enterprise risk management.
 </p>
+
+<div class="divider"></div>
 
 <div class="capabilities">
 
@@ -157,8 +210,8 @@ body {
     <div class="capability">
         <h3>Interpret</h3>
         <p>
-            Convert complex technical and business data
-            into understandable risk insights.
+            Convert technical and business data into
+            understandable risk insights.
         </p>
     </div>
 
@@ -171,6 +224,7 @@ body {
     </div>
 
 </div>
+```
 
 </div>
 
