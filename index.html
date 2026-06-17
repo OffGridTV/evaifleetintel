@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EVAI</title>
+
+  <title>EVAI | Understanding Variance. Prioritizing Risk.</title>
 
   <style>
     @font-face {
@@ -16,58 +18,91 @@
       src: url("fonts/Alpino-Medium.otf") format("opentype");
     }
 
+    :root {
+      --bg-top: #cfe0f8;
+      --bg-bottom: #e3ecfb;
+      --text: #08182d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(180deg, #cfe0f8 0%, #e3ecfb 100%);
-      font-family: "Synonym", sans-serif;
-      color: #0a1a2f;
+      background: linear-gradient(
+        180deg,
+        var(--bg-top) 0%,
+        var(--bg-bottom) 100%
+      );
+      color: var(--text);
       text-align: center;
+      font-family: "Synonym", sans-serif;
     }
 
     .wrap {
       width: 100%;
-      max-width: 900px;
-      padding: 0 20px;
+      max-width: 1200px;
+      padding: 40px 24px;
     }
 
     .logo {
-      width: clamp(360px, 50vw, 600px);
-      margin-bottom: 50px;
+      width: clamp(500px, 58vw, 760px);
+      margin-bottom: 28px;
     }
 
     h1 {
       font-family: "Alpino", serif;
-      font-size: clamp(24px, 2.5vw, 34px);
+      font-size: clamp(40px, 3vw, 56px);
       font-weight: 500;
-      margin-bottom: 18px;
-      color: #08182d;
+      line-height: 1.15;
+      margin: 0 0 18px 0;
+      color: var(--text);
     }
 
     .sub {
-      font-size: 15px;
-      letter-spacing: 0.03em;
-      opacity: 0.75;
-      max-width: 600px;
+      max-width: 900px;
       margin: 0 auto;
-      line-height: 1.6;
+      font-size: clamp(20px, 1.4vw, 26px);
+      line-height: 1.5;
+      opacity: 0.78;
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        width: min(90vw, 600px);
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .sub {
+        font-size: 18px;
+      }
     }
   </style>
+
 </head>
 
 <body>
   <div class="wrap">
 
-    <img src="evai.svg" class="logo" alt="EVAI Logo" />
+```
+<img src="evai.svg" class="logo" alt="EVAI Logo" />
 
-    <h1>Understanding Variance. Prioritizing Risk.</h1>
+<h1>Understanding Variance. Prioritizing Risk.</h1>
 
-    <div class="sub">
-      AI-powered analytics for operational intelligence and decision support.
-    </div>
+<div class="sub">
+  AI-powered analytics for operational intelligence, anomaly detection,
+  and decision support.
+</div>
+```
 
   </div>
 </body>
