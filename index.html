@@ -103,6 +103,9 @@ body::before{
     background:var(--card);
 
     backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
 }
 
 /* LOGO */
@@ -126,30 +129,32 @@ body::before{
     left:50%;
     top:50%;
 
-    width:520px;
-    height:220px;
+    width:650px;
+    height:280px;
 
     transform:translate(-50%,-50%);
 
     background:
         radial-gradient(
             ellipse,
-            rgba(116,179,255,.12),
-            transparent 72%
+            rgba(116,179,255,.22),
+            rgba(116,179,255,.08) 40%,
+            transparent 75%
         );
 }
 
 .logo{
-    width:460px;
+
+    width:520px;
     max-width:90%;
 
-    opacity:.82;
+    opacity:1;
 
     filter:
-        brightness(.75)
-        contrast(1.1)
-        saturate(.8)
-        drop-shadow(0 0 10px rgba(116,179,255,.08));
+        brightness(1.15)
+        contrast(1.15)
+        saturate(1.1)
+        drop-shadow(0 0 18px rgba(116,179,255,.18));
 }
 
 /* STATUS */
@@ -317,7 +322,7 @@ body::before{
     }
 
     .logo{
-        width:320px;
+        width:360px;
     }
 
     .headline{
@@ -337,6 +342,7 @@ body::before{
 
 <div class="container">
 
+```
 <div class="logo-wrap">
     <img src="evai.svg" alt="EVAI" class="logo">
 </div>
