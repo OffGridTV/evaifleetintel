@@ -1,28 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EVAI | Risk Intelligence</title>
+
+<style>
+
+@font-face {
+    font-family: "Synonym";
+    src: url("fonts/Synonym-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: "Alpino";
+    src: url("fonts/Alpino-Medium.otf") format("opentype");
+}
+
+:root{
+    --bg:#040b16;
+    --panel:rgba(7,15,30,.78);
+    --accent:#74b3ff;
+    --text:#d8e0ea;
+    --muted:#95a7c0;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:"Synonym",sans-serif;
+    background:
+        radial-gradient(circle at top center,
+        #173a6f 0%,
+        #081426 45%,
+        #040b16 80%);
+    color:var(--text);
+    position:relative;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(rgba(116,179,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(116,179,255,.04) 1px, transparent 1px);
+    background-size:60px 60px;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    width:min(1200px,92vw);
+    padding:70px 60px;
+    text-align:center;
+    border-radius:34px;
+    border:1px solid rgba(255,255,255,.08);
+    background:var(--panel);
+    backdrop-filter:blur(18px);
+    box-shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+.logo-wrap{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    margin-bottom:25px;
+}
+
+.logo-wrap::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:800px;
+    height:350px;
+    transform:translate(-50%,-50%);
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(116,179,255,.18),
+            rgba(116,179,255,.08) 45%,
+            transparent 75%
+        );
+}
+
+.logo{
+    position:relative;
+    z-index:2;
+    width:min(700px,90vw);
+    height:auto;
+    filter:drop-shadow(0 0 24px rgba(116,179,255,.18));
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.78rem;
+    margin-bottom:24px;
+}
+
+.status::before{
+    content:"";
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--accent);
+    box-shadow:
+        0 0 10px var(--accent),
+        0 0 20px rgba(116,179,255,.4);
+}
+
+.headline{
+    font-family:"Alpino",serif;
+    font-size:clamp(3rem,4vw,4.4rem);
+    font-weight:500;
+    line-height:1.1;
+    margin-bottom:28px;
+}
+
+.description{
+    max-width:950px;
+    margin:0 auto;
+    font-size:1.2rem;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+@media(max-width:900px){
+
+    .container{
+        padding:45px 25px;
+    }
+
+    .headline{
+        font-size:2.8rem;
+    }
+
+    .description{
+        font-size:1rem;
+    }
+}
+
+</style>
+</head>
+
 <body>
 
 <div class="container">
 
-```
-<div class="logo-wrap">
-    <img src="./evaiv1.svg" alt="" class="logo">
-</div>
+    <div class="logo-wrap">
+        <img src="fonts/EVAIv1.svg" alt="EVAI" class="logo">
+    </div>
 
-<div class="status">
-    Platform Development Active
-</div>
+    <div class="status">
+        Platform Development Active
+    </div>
 
-<h1 class="headline">
-    Variance Reveals Risk
-</h1>
+    <h1 class="headline">
+        Variance Reveals Risk
+    </h1>
 
-<p class="description">
-    EVAI transforms operational, cybersecurity, compliance, and business
-    signals into actionable enterprise intelligence. Identify what matters,
-    understand why it matters, and focus resources where risk, resilience,
-    and opportunity intersect.
-</p>
-```
+    <p class="description">
+        EVAI transforms operational, cybersecurity, compliance, and business
+        signals into actionable enterprise intelligence. Identify what matters,
+        understand why it matters, and focus resources where risk, resilience,
+        and opportunity intersect.
+    </p>
 
 </div>
 
 </body>
+</html>
